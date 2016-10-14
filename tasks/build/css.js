@@ -11,9 +11,22 @@ var gulp = require('gulp'),
     mqpacker = require('css-mqpacker'),
     autoprefix = require('autoprefixer'),
     pxtorem = require('postcss-pxtorem'),
+    banner = require('gulp-banner'),
     notify = require('gulp-notify');
 
 module.exports = function () {
+
+    var themeHeader = '/*\n' +
+        ' * Theme Name: <%= config.theme.name %>\n' +
+        ' * Theme URI: <%= config.theme.homepage %>\n' +
+        ' * Description: <%= config.theme.description %>\n' +
+        ' * Author: <%= config.theme.author %>\n' +
+        ' * Version: <%= config.theme.version %>\n' +
+        ' * Licence: <%= config.theme.licence %>\n' +
+        ' * Text Domain: <%= config.theme.textdomain %>\n' +
+        ' * Template: <%= config.theme.template %>\n' +
+        ' */\n\n';
+
     var postProcessors = [
         mqpacker({
             sort: true
@@ -35,6 +48,9 @@ module.exports = function () {
             includePaths: [].concat(normalize, neat)
         }))
         .pipe(postcss(postProcessors))
+        .pipe(banner(themeHeader, {
+            config: config
+        }))
         .pipe(sourcemap.write('.'))
         .pipe(gulp.dest(config.styles.dest))
         .pipe(notify({message: config.styles.message}));

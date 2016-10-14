@@ -1,4 +1,5 @@
-var path = require('path'),
+var pkg = require('./package.json'),
+    path = require('path'),
     absPathToBower = path.resolve();
 
 var sources = {
@@ -11,6 +12,16 @@ var sources = {
 };
 
 module.exports = {
+    theme: {
+        name: "Genesis Starter Theme",
+        homepage: pkg.homepage,
+        description: pkg.description,
+        author: pkg.author,
+        version: pkg.version,
+        licence: pkg.license,
+        textdomain: pkg.name,
+        template: "genesis"
+    },
     hologram: {
         config: 'hologram_config.yml'
     },

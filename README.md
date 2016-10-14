@@ -1,6 +1,6 @@
 # Re-usable Gulp Toolkit for WordPress Themes
 
-This is a re-usable set of theme tasks which can be pulled into any theme. 
+This is a re-usable set of Gulp tasks which can be pulled into any WordPress theme. 
 
 ## Usage
 

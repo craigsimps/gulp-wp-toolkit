@@ -1,13 +1,14 @@
 'use strict';
 
 var gulp = require('gulp'),
-    config = require('../config'),
+    config = require('../../config'),
     vendorFiles = require('bower-files')({
         cwd: config.dependencies.path
     }),
     concat = require('gulp-concat'),
     uglifyjs = require('gulp-uglify'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    notify = require('gulp-notify');
 
 module.exports = function () {
     return gulp

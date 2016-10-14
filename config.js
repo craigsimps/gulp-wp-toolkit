@@ -1,23 +1,23 @@
 var path = require('path'),
-    absPathToBower = path.resolve('../');
+    absPathToBower = path.resolve();
 
 var sources = {
-    root: '../',
-    code: '../**/*.php',
-    images: '../develop/images/**/*',
-    scripts: '../develop/js/**/*.js',
-    styles: '../develop/scss/**/*.scss',
-    json: '../**/*.json'
+    root: '',
+    code: '**/*.php',
+    images: 'develop/images/**/*',
+    scripts: 'develop/js/**/*.js',
+    styles: 'develop/scss/**/*.scss',
+    json: '**/*.json'
 };
 
 module.exports = {
     hologram: {
-        config: '../hologram_config.yml'
+        config: 'hologram_config.yml'
     },
     i18n: {
         src: sources.code,
         textdomain: 'genesis-starter-theme',
-        dest: '../languages/',
+        dest: 'languages/',
         message: 'i18n tasks complete.',
         keywords: [
             '__:1,2d',
@@ -44,42 +44,42 @@ module.exports = {
     },
     images: {
         src: sources.images,
-        dest: '../images/',
+        dest: 'images/',
         message: 'Images task complete.'
     },
     scripts: {
         src: sources.scripts,
         json: sources.root + '**/*.json',
         files: [
-            '../develop/js/main.js'
+            'develop/js/main.js'
         ],
         jshint: sources.root + '.jshintrc',
         jscs: sources.root + '.jscsrc',
         output: 'theme.js',
         filename: 'theme',
-        dest: '../js/',
+        dest: 'js/',
         message: 'Javascript tasks complete.'
     },
     server: {
-        url: 'sample.dev'
+        url: 'library.dev'
     },
     styles: {
         src: sources.styles,
         lint: sources.root + '.scss-lint.yml',
         output: 'compressed',
-        dest: '../',
+        dest: '',
         message: 'Stylesheet compiled & saved.'
     },
     dependencies: {
         path: absPathToBower,
-        jsoutput: sources.root + '/vendor/',
+        jsoutput: sources.root + 'vendor/',
         jsfilename: 'vendor',
-        cssoutput: sources.root + '/vendor/',
+        cssoutput: sources.root + 'vendor/',
         cssfilename: 'vendor',
         message: 'Bower components stripped and minified.'
     },
     watch: {
-        root: sources.root + '/**/*',
+        root: sources.root + '**/*',
         code: sources.code,
         images: sources.images,
         scripts: sources.scripts,

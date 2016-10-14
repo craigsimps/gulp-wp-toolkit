@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-    config = require('../config'),
+    config = require('../../config'),
     postcss = require('gulp-postcss'),
     colorguard = require('colorguard'),
     filterstream = require('postcss-filter-stream'),

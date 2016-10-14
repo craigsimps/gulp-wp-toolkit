@@ -1,8 +1,9 @@
 'use strict';
 
 var gulp = require('gulp'),
-    config = require('../config'),
+    config = require('../../config'),
     changed = require('gulp-changed'),
+    cache = require('gulp-cache'),
     imagemin = require('gulp-imagemin'),
     notify = require('gulp-notify');
 

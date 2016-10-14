@@ -1,9 +1,9 @@
 'use strict';
 
 var gulp = require('gulp'),
-    config = require('../config'),
+    config = require('../../config'),
     vendorFiles = require('bower-files')({
-        cwd: config.path
+        cwd: config.dependencies.path
     }),
     concat = require('gulp-concat'),
     uglifycss = require('gulp-uglifycss'),

@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-    config = require('../config'),
+    config = require('../../config'),
     plumber = require('gulp-plumber'),
     sourcemap = require('gulp-sourcemaps'),
     sass = require('gulp-sass'),

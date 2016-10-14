@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-    config = require('../config'),
+    config = require('../../config'),
     sort = require('gulp-sort'),
     potgen = require('gulp-wp-pot'),
     notify = require('gulp-notify');

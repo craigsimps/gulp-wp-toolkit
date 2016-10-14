@@ -1,9 +1,8 @@
 'use strict';
 
-var gulp = require('gulp');
-var bs = require('./browser-sync').get('SIM01');
-
-var config = require('../config');
+var gulp = require('gulp'),
+    config = require('../config'),
+    bs = require('browser-sync').get('SIM01');
 
 module.exports = function() {
     gulp.watch(config.watch.styles, ['build:css']);

@@ -7,7 +7,7 @@ module.exports = {
     'dep:install': [require('./dependencies/install')],
     'dep:bowercss': [require('./dependencies/bowercss')],
     'dep:bowerjs': [require('./dependencies/bowerjs')],
-    'dependencies': [['dep:install'], ['dep:bowercss', 'dep:bowerjs']],
+    'dependencies': [['dep:install', 'dep:bowercss', 'dep:bowerjs']],
 
     'build:css': [require('./build/css')],
     'build:js': [require('./build/js')],
@@ -15,7 +15,7 @@ module.exports = {
     'build:i18n': [require('./build/i18n')],
     'build:styleguide': [require('./build/styleguide')],
     'build:potomo': [require('./build/potomo')],
-    'build': [['dependencies'], ['build:css', 'build:js', 'build:images', 'build:i18n']],
+    'build': [['dependencies', 'build:css', 'build:js', 'build:images', 'build:i18n']],
 
     'clean:css': [require('./clean/css')],
     'clean:js': [require('./clean/js')],

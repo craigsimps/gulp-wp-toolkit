@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-    config = require('../config'),
+    config = require('../../config'),
     phpcs = require('gulp-phpcs');
 
 module.exports = function () {

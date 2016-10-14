@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-    config = require('../config'),
+    config = require('../../config'),
     checktextdomain = require('gulp-checktextdomain');
 
 module.exports = function () {

@@ -27,7 +27,7 @@ module.exports = {
     },
     i18n: {
         src: sources.code,
-        textdomain: 'genesis-starter-theme',
+        textdomain: pkg.name,
         dest: 'languages/',
         message: 'i18n tasks complete.',
         keywords: [

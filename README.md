@@ -34,7 +34,7 @@ var gulp = require('gulp'),
 
 toolkit.extendConfig({
     theme: {
-        name: "Gamajo Tech Theme",
+        name: "WordPress Theme Name",
         homepage: pkg.homepage,
         description: pkg.description,
         author: pkg.author,

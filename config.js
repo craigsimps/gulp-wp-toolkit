@@ -22,6 +22,12 @@ module.exports = {
         textdomain: pkg.name,
         template: "genesis"
     },
+    bump: {
+      files: [
+          './package.json',
+          './bower.json'
+      ]
+    },
     hologram: {
         config: 'hologram_config.yml'
     },

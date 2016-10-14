@@ -18,7 +18,7 @@ module.exports = function() {
     }
 
     return gulp
-        .src(['./package.json', './bower.json'])
+        .src(config.bump.files)
         .pipe(bump(options))
         .pipe(gulp.dest('./'));
 };

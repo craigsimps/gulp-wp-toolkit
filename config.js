@@ -42,7 +42,6 @@ module.exports = {
     bump: {
       files: [
           './package.json',
-          './bower.json',
           './composer.json'
       ]
     },

@@ -5,7 +5,7 @@ var config = require('../../config'),
 
 module.exports = function () {
     return del([
-        config.dest.js + config.scripts.filename + '.js',
-        config.dest.js + config.scripts.filename + '.min.js'
+        config.dest.js + config.js.filename + '.js',
+        config.dest.js + config.js.filename + '.min.js'
     ], {force: true});
 };

@@ -36,7 +36,10 @@ module.exports = {
     'lint:js': [sequence('lint:jshint', 'lint:jscs', 'lint:jsvalidate', 'lint:json')],
     'lint:i18n': [require('./lint/i18n')],
     'lint:colors': [require('./lint/colors')],
-    'lint': [sequence('lint:scss', 'lint:js', 'lint:i18n', 'lint:colors')],
+    'lint:phpcs': [require('./lint/phpcs')],
+    'lint:phpmd': [require('./lint/phpmd')],
+    'lint:php': [sequence('lint:phpcs', 'lint:phpmd')],
+    'lint': [sequence('lint:php', 'lint:scss', 'lint:js', 'lint:i18n', 'lint:colors')],
 
     'self:jshint': [require('./self/jshint')],
     'self:jscs': [require('./self/jscs')],

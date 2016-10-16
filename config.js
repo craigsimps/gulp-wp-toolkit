@@ -22,6 +22,10 @@ module.exports = {
         textdomain: pkg.name,
         template: "genesis"
     },
+    lintfiles: {
+        phpcs: 'phpcs.xml',
+        phpmd: 'phpmd.xml'
+    },
     bump: {
       files: [
           './package.json',

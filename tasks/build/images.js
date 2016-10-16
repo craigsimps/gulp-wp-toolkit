@@ -9,9 +9,9 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     return gulp
-        .src(config.images.src)
-        .pipe(changed(config.images.dest))
+        .src(config.src.images)
+        .pipe(changed(config.dest.images))
         .pipe(cache(imagemin({optimizationLevel: 3, progressive: true, interlaced: true})))
-        .pipe(gulp.dest(config.images.dest))
-        .pipe(notify({message: config.images.message}));
+        .pipe(gulp.dest(config.dest.images))
+        .pipe(notify({message: config.messages.images}));
 };

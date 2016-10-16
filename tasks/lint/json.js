@@ -6,6 +6,6 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     return gulp
-        .src(config.scripts.json)
+        .src(config.src.json)
         .pipe(jsonlint());
 };

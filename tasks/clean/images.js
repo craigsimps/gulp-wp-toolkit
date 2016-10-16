@@ -6,6 +6,6 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     return del([
-        config.images.dest + '**/*'
+        config.dest.images + '**/*'
     ], {force: true});
 };

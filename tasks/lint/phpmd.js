@@ -18,7 +18,7 @@ module.exports = function () {
     }
 
     return gulp
-        .src([config.code.src])
+        .src([config.src.php])
         .pipe(phpmd({
             format: 'text',
             ruleset: configFile

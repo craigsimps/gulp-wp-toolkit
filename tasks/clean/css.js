@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     return del([
-        config.styles.dest + '*.css',
-        config.styles.dest + '*.css.map'
+        config.dest.css + '*.css',
+        config.dest.css + '*.css.map'
     ], {force: true});
 };

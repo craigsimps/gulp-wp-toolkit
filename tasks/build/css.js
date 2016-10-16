@@ -40,11 +40,11 @@ module.exports = function () {
     ];
 
     return gulp
-        .src(config.styles.src)
+        .src(config.src.css)
         .pipe(plumber())
         .pipe(sourcemap.init())
         .pipe(sass.sync({
-            outputStyle: config.styles.output,
+            outputStyle: config.css.outputStyle,
             includePaths: [].concat(normalize, neat)
         }))
         .pipe(postcss(postProcessors))
@@ -52,6 +52,6 @@ module.exports = function () {
             config: config
         }))
         .pipe(sourcemap.write('.'))
-        .pipe(gulp.dest(config.styles.dest))
-        .pipe(notify({message: config.styles.message}));
+        .pipe(gulp.dest(config.dest.css))
+        .pipe(notify({message: config.messages.css}));
 };

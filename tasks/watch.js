@@ -5,14 +5,14 @@ var gulp = require('gulp'),
     bs = require('browser-sync').get('SIM01');
 
 module.exports = function() {
-    gulp.watch(config.watch.styles, ['build:css']);
-    gulp.watch(config.watch.scripts, ['build:js']);
-    gulp.watch(config.watch.images, ['build:images']);
-    gulp.watch(config.watch.code, ['build:i18n']);
+    gulp.watch(config.src.css, ['build:css']);
+    gulp.watch(config.src.js, ['build:js']);
+    gulp.watch(config.src.images, ['build:images']);
+    gulp.watch(config.src.php, ['build:i18n']);
     gulp.watch([
-        config.watch.styles,
-        config.watch.scripts,
-        config.watch.images,
-        config.watch.code
+        config.src.css,
+        config.src.js,
+        config.src.images,
+        config.src.php
     ]).on('change', bs.reload);
 };

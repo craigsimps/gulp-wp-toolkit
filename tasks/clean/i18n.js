@@ -6,6 +6,6 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     return del([
-        config.i18n.dest + config.textdomain + '.pot'
+        config.dest.i18n + config.theme.textdomain + '.pot'
     ], {force: true});
 };

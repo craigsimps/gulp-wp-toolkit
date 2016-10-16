@@ -18,7 +18,7 @@ module.exports = function () {
     }
 
     return gulp
-        .src([config.code.src])
+        .src([config.src.php])
         .pipe(phpcs({
             standard: configFile,
             warningSeverity: 0

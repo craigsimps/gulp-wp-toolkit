@@ -18,7 +18,7 @@ module.exports = function () {
     }
 
     return gulp
-        .src(config.styles.src)
+        .src(config.src.css)
         .pipe(scsslint({
             'config': lintFile
         }));

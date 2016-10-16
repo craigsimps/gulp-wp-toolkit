@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     return gulp
-        .src(config.src)
+        .src(config.src.styles)
         .pipe(postcss([
             filterstream('**/node_modules/**', colorguard())
         ], {syntax: scss}));

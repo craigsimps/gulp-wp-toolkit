@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     return del([
-        config.scripts.dest + config.scripts.filename + '.js',
-        config.scripts.dest + config.scripts.filename + '.min.js'
+        config.dest.js + config.scripts.filename + '.js',
+        config.dest.js + config.scripts.filename + '.min.js'
     ], {force: true});
 };

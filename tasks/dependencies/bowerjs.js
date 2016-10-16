@@ -3,7 +3,7 @@
 var gulp = require('gulp'),
     config = require('../../config'),
     vendorFiles = require('bower-files')({
-        cwd: config.dependencies.path
+        cwd: config.src.bower
     }),
     concat = require('gulp-concat'),
     uglifyjs = require('gulp-uglify'),
@@ -13,9 +13,9 @@ var gulp = require('gulp'),
 module.exports = function () {
     return gulp
         .src(vendorFiles.ext('js').files)
-        .pipe(concat(config.dependencies.jsfilename + '.js'))
-        .pipe(gulp.dest(config.dependencies.jsoutput))
+        .pipe(concat(config.bower.jsfilename + '.js'))
+        .pipe(gulp.dest(config.dest.bowerjs))
         .pipe(uglifyjs())
-        .pipe(rename(config.dependencies.jsfilename + '.min.js'))
-        .pipe(gulp.dest(config.dependencies.jsoutput));
+        .pipe(rename(config.bower.jsfilename + '.min.js'))
+        .pipe(gulp.dest(config.dest.bowerjs));
 };

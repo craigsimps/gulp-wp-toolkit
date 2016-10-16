@@ -1,26 +1,36 @@
+'use strict';
+
 var pkg = require('./package.json'),
     path = require('path'),
     absPathToBower = path.resolve();
 
-var sources = {
-    root: '',
-    code: '**/*.php',
-    images: 'develop/images/**/*',
-    scripts: 'develop/js/**/*.js',
-    styles: 'develop/scss/**/*.scss',
-    json: '**/*.json'
-};
-
 module.exports = {
     theme: {
-        name: "Genesis Starter Theme",
+        name: 'Genesis Starter Theme',
         homepage: pkg.homepage,
         description: pkg.description,
         author: pkg.author,
         version: pkg.version,
         licence: pkg.license,
         textdomain: pkg.name,
-        template: "genesis"
+        template: 'genesis'
+    },
+    src: {
+        php: '**/*.php',
+        images: 'develop/images/**/*',
+        css: 'develop/scss/**/*.scss',
+        js: 'develop/js/**/*.js',
+        json: '**/*.json',
+        bower: absPathToBower
+
+    },
+    dest: {
+        i18n: 'languages/',
+        images: 'images/',
+        css: '',
+        js: 'js/',
+        bowerjs: 'vendor/',
+        bowercss: 'vendor/'
     },
     lintfiles: {
         scsslint: '.scss-lint.yml',
@@ -36,14 +46,18 @@ module.exports = {
           './composer.json'
       ]
     },
+    messages: {
+        css: 'Stylesheet compiled and saved.',
+        i18n: 'Translation file generated.',
+        images: 'Image files compressed and copied.',
+        js: 'Javascript task complete.',
+        potomo: 'PO files converted to MO files.',
+        styleguide: 'Styleguide task complete.'
+    },
     hologram: {
         config: 'hologram_config.yml'
     },
     i18n: {
-        src: sources.code,
-        textdomain: pkg.name,
-        dest: 'languages/',
-        message: 'i18n tasks complete.',
         keywords: [
             '__:1,2d',
             '_e:1,2d',
@@ -61,51 +75,21 @@ module.exports = {
             '_nx_noop:1,2,3c,4d'
         ]
     },
-    code: {
-        src: sources.code,
-        ignore: [''],
-        standard: 'WordPress',
-        message: 'PHP lint complete.'
-    },
-    images: {
-        src: sources.images,
-        dest: 'images/',
-        message: 'Images task complete.'
-    },
-    scripts: {
-        src: sources.scripts,
-        json: sources.root + '**/*.json',
+    js: {
         files: [
             'develop/js/main.js'
         ],
-        output: 'theme.js',
-        filename: 'theme',
-        dest: 'js/',
-        message: 'Javascript tasks complete.'
+        filename: 'theme'
     },
     server: {
         url: 'library.dev'
     },
-    styles: {
-        src: sources.styles,
-        output: 'compressed',
-        dest: '',
-        message: 'Stylesheet compiled & saved.'
+    css: {
+        outputStyle: 'compressed'
     },
-    dependencies: {
-        path: absPathToBower,
-        jsoutput: sources.root + 'vendor/',
+    bower: {
         jsfilename: 'vendor',
-        cssoutput: sources.root + 'vendor/',
-        cssfilename: 'vendor',
-        message: 'Bower components stripped and minified.'
-    },
-    watch: {
-        root: sources.root + '**/*',
-        code: sources.code,
-        images: sources.images,
-        scripts: sources.scripts,
-        styles: sources.styles
+        cssfilename: 'vendor'
     },
     self: {
         src: './**/*.js',

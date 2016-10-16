@@ -8,12 +8,12 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     return gulp
-        .src(config.i18n.src)
+        .src(config.src.php)
         .pipe(sort())
         .pipe(potgen({
-            domain: config.i18n.textdomain,
-            destFile: config.i18n.textdomain + '.pot'
+            domain: config.theme.textdomain,
+            destFile: config.theme.textdomain + '.pot'
         }))
-        .pipe(gulp.dest(config.i18n.dest))
-        .pipe(notify({message: config.i18n.message}));
+        .pipe(gulp.dest(config.dest.i18n))
+        .pipe(notify({message: config.messages.i18n}));
 };

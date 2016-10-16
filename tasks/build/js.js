@@ -10,13 +10,13 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     return gulp
-        .src(config.scripts.files)
+        .src(config.js.files)
         .pipe(sourcemap.init())
-        .pipe(concat(config.scripts.filename + '.js'))
-        .pipe(gulp.dest(config.scripts.dest))
+        .pipe(concat(config.js.filename + '.js'))
+        .pipe(gulp.dest(config.dest.js))
         .pipe(uglify())
-        .pipe(rename(config.scripts.filename + '.min.js'))
+        .pipe(rename(config.js.filename + '.min.js'))
         .pipe(sourcemap.write())
-        .pipe(gulp.dest(config.scripts.dest))
-        .pipe(notify({message: config.scripts.message}));
+        .pipe(gulp.dest(config.dest.js))
+        .pipe(notify({message: config.messages.js}));
 };

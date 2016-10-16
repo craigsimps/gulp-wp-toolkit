@@ -7,5 +7,6 @@ var gulp = require('gulp'),
 module.exports = function () {
     return gulp
         .src(config.hologram.config)
-        .pipe(hologram({logging:true}));
+        .pipe(hologram({logging:true}))
+        .pipe(notify({message: config.messages.styleguide}));
 };

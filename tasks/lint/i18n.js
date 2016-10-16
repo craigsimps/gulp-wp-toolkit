@@ -6,9 +6,10 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     return gulp
-        .src(config.i18n.src)
+        .description()
+        .src(config.src.i18n)
         .pipe(checktextdomain({
-            text_domain: config.i18n.textdomain,
+            text_domain: config.theme.textdomain,
             keywords: config.i18n.keywords
         }));
 };

@@ -3,7 +3,7 @@
 var gulp = require('gulp'),
     config = require('../../config'),
     vendorFiles = require('bower-files')({
-        cwd: config.dependencies.path
+        cwd: config.src.bower
     }),
     concat = require('gulp-concat'),
     uglifycss = require('gulp-uglifycss'),
@@ -13,12 +13,12 @@ var gulp = require('gulp'),
 module.exports = function () {
     return gulp
         .src(vendorFiles.ext('css').files)
-        .pipe(concat(config.dependencies.cssfilename + '.css'))
-        .pipe(gulp.dest(config.dependencies.cssoutput))
+        .pipe(concat(config.bower.cssfilename + '.css'))
+        .pipe(gulp.dest(config.dest.bowercss))
         .pipe(uglifycss({
             'maxLineLen': 80,
             'uglyComments': true
         }))
-        .pipe(rename(config.dependencies.cssfilename + '.min.css'))
-        .pipe(gulp.dest(config.dependencies.cssoutput));
+        .pipe(rename(config.bower.cssfilename + '.min.css'))
+        .pipe(gulp.dest(config.dest.bowercss));
 };

@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     return del([
-        config.dependencies.cssoutput + config.dependencies.cssfilename + '.css',
-        config.dependencies.cssoutput + config.dependencies.cssfilename + '.min.css'
+        config.dest.bowercss + config.bower.cssfilename + '.css',
+        config.dest.bowercss + config.bower.cssfilename + '.min.css'
     ], {force: true});
 };

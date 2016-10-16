@@ -6,9 +6,10 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     return gulp
-        .src([config.i18n.dest + '*.po'])
+        .src([config.dest.php + '*.po'])
         .pipe(potomo({
             poDel: true
         }))
-        .pipe(gulp.dest(config.i18n.dest));
+        .pipe(gulp.dest(config.dest.i18n))
+        .pipe(notify({message: config.messages.potomo}));
 };

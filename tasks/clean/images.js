@@ -1,7 +1,6 @@
 'use strict';
 
-var gulp = require('gulp'),
-    config = require('../../config'),
+var config = require('../../config'),
     del = require('del');
 
 module.exports = function () {

@@ -7,8 +7,7 @@ var gulp = require('gulp'),
     }),
     concat = require('gulp-concat'),
     uglifyjs = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    notify = require('gulp-notify');
+    rename = require('gulp-rename');
 
 module.exports = function () {
     return gulp

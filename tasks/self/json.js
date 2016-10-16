@@ -1,7 +1,6 @@
 'use strict';
 
 var gulp = require('gulp'),
-    config = require('../../config'),
     path = require('path'),
     jsonlint = require('gulp-jsonlint');
 

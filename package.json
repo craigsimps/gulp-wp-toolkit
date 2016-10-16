@@ -40,7 +40,6 @@
     "gulp-sequence": "^0.4.5",
     "gulp-sort": "^2.0.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-stats": "0.0.3",
     "gulp-uglify": "^2.0.0",
     "gulp-uglifycss": "^1.0.6",
     "gulp-wp-pot": "^1.1.0",

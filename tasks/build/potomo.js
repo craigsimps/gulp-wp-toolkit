@@ -2,7 +2,8 @@
 
 var gulp = require('gulp'),
     config = require('../../config'),
-    potomo = require('gulp-potomo');
+    potomo = require('gulp-potomo'),
+    notify = require('gulp-notify');
 
 module.exports = function () {
     return gulp

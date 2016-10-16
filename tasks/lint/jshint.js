@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 module.exports = function () {
 
     var lintFile,
-        themeLintFile = config.scripts.jshint;
+        themeLintFile = config.lintfiles.jshint;
 
     lintFile = path.join(__dirname, '../../lintfiles/', '.jshintrc');
 

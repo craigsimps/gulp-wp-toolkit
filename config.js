@@ -23,6 +23,9 @@ module.exports = {
         template: "genesis"
     },
     lintfiles: {
+        scsslint: '.scss-lint.yml',
+        jshint: 'jshintrc',
+        jscs: '.jscsrc',
         phpcs: 'phpcs.xml',
         phpmd: 'phpmd.xml'
     },
@@ -74,8 +77,6 @@ module.exports = {
         files: [
             'develop/js/main.js'
         ],
-        jshint: sources.root + '.jshintrc',
-        jscs: sources.root + '.jscsrc',
         output: 'theme.js',
         filename: 'theme',
         dest: 'js/',
@@ -86,7 +87,6 @@ module.exports = {
     },
     styles: {
         src: sources.styles,
-        lint: sources.root + '.scss-lint.yml',
         output: 'compressed',
         dest: '',
         message: 'Stylesheet compiled & saved.'

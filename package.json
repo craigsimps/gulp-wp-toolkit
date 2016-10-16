@@ -35,6 +35,7 @@
     "gulp-postcss": "^6.0.1",
     "gulp-potomo": "^1.0.1",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
     "gulp-rtlcss": "^1.0.0",
     "gulp-sass": "^2.0.4",
     "gulp-scss-lint": "^0.4.0",

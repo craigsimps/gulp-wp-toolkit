@@ -90,15 +90,5 @@ module.exports = {
     bower: {
         jsfilename: 'vendor',
         cssfilename: 'vendor'
-    },
-    self: {
-        src: './**/*.js',
-        jscs: '.jscsrc',
-        jshint: '.jshintrc',
-        json: [
-            'package.json',
-            '.jscsrc',
-            '.jshintrc'
-        ]
     }
 };

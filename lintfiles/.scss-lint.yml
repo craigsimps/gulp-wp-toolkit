@@ -1,0 +1,45 @@
+# https://make.wordpress.org/core/handbook/best-practices/coding-standards/css/
+
+linters:
+
+  Comment:
+    enabled: false
+
+  DisableLinterReason:
+    enabled: true
+
+  DuplicateProperty:
+    enabled: false
+
+  IdSelector:
+    enabled: false
+
+  Indentation:
+    enabled: true
+    character: tab
+    width: 1
+
+  LeadingZero:
+    enabled: true
+    style: include_zero
+
+  PropertySortOrder:
+    enabled: true
+
+  PropertySpelling:
+    enabled: true
+    extra_properties: []
+
+  SingleLinePerProperty:
+    enabled: true
+    allow_single_line_rule_sets: false
+
+  StringQuotes:
+    enabled: true
+    style: double_quotes
+
+  UrlFormat:
+    enabled: false
+
+  UrlQuotes:
+    enabled: false

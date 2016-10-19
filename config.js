@@ -37,7 +37,8 @@ module.exports = {
         jshint: 'jshintrc',
         jscs: '.jscsrc',
         phpcs: 'phpcs.xml',
-        phpmd: 'phpmd.xml'
+        phpmd: 'phpmd.xml',
+        eslint: '.eslintrc'
     },
     bump: {
       files: [

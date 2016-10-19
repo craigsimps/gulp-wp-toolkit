@@ -31,6 +31,7 @@ module.exports = {
     'clean': [['clean:css', 'clean:js', 'clean:images', 'clean:i18n', 'clean:bower']],
 
     'lint:scss': [require('./lint/scss')],
+    'lint:eslint': [require('./lint/eslint')],
     'lint:jshint': [require('./lint/jshint')],
     'lint:jscs': [require('./lint/jscs')],
     'lint:jsvalidate': [require('./lint/jsvalidate')],

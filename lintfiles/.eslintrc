@@ -1,0 +1,36 @@
+{
+  "ecmaFeatures": {
+  },
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "_": false,
+    "Backbone": false,
+    "jQuery": false,
+    "JSON": false,
+    "wp": false
+  },
+  "rules": {
+    "no-cond-assign": [
+      "error",
+      "except-parens"
+    ],
+    "no-irregular-whitespace": "error",
+    "curly": "error",
+    "eqeqeq": "error",
+    "no-caller": "error",
+    "no-eq-null": "error",
+    "no-unused-expressions": "error",
+    "wrap-iife": [
+      "error",
+      "any"
+    ],
+    "no-undef": "error",
+    "no-unused-vars": "error",
+    "quotes": [
+      "error",
+      "single"
+    ]
+  }
+}

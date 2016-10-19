@@ -13,6 +13,7 @@
     "browser-sync": "^2.7.11",
     "colorguard": "^1.2.0",
     "css-mqpacker": "^5.0.1",
+    "cssnano": "^3.7.7",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-banner": "^0.1.3",

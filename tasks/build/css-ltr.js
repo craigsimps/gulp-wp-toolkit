@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     mqpacker = require('css-mqpacker'),
     autoprefix = require('autoprefixer'),
     pxtorem = require('postcss-pxtorem'),
+    cssnano = require('cssnano'),
     banner = require('gulp-banner'),
     notify = require('gulp-notify');
 
@@ -36,7 +37,8 @@ module.exports = function () {
             root_value: 16,
             replace: false,
             media_query: true
-        })
+        }),
+        cssnano()
     ];
 
     return gulp

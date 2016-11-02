@@ -11,9 +11,8 @@ module.exports = {
     'dep:bowerjs': [require('./dependencies/bowerjs')],
     'dependencies': [sequence('dep:install', ['dep:bowercss', 'dep:bowerjs'])],
 
-    'build:css-ltr': [require('./build/css-ltr')],
-    'build:css-rtl': [require('./build/css-rtl')],
-    'build:css': [sequence('build:css-ltr', 'build:css-rtl')],
+    'build:css': [require('./build/css')],
+    'build:rtl': [require('./build/rtl')],
     'build:js': [require('./build/js')],
     'build:images': [require('./build/images')],
     'build:i18n': [require('./build/i18n')],

@@ -108,6 +108,14 @@ A number of tasks are available to test the code quality within this repository.
 * `gulp self:json` checks that any JSON files are valid (these are defined in `config.js` else we'd be crawling all `node_modules`.
 * `gulp self:jsvalidate` checks our JS against JSValidate rules.
 
+### Bump
+Easily bump the version number of your `package.json` and `composer.json` files (defined in config) which will in turn bump the version of your theme. Uses [Semver](http://semver.org/).
+
+* `gulp bump` updates the patch version. 1.0.0 to 1.0.1
+* `gulp bump --patch` updates the patch version. 1.0.0 to 1.0.1
+* `gulp bump --minor` updates the minor version. 1.0.0 to 1.1.0
+* `gulp bump --major` updates the major version. 1.0.0 to 2.0.0
+
 ### Serve
 Running `gulp serve` will launch a new BrowserSync session, proxying the localhost URL which is defined in `config.js`. Our `gulp watch` task will also run, and your browser will live reload when any changes are detected. BrowserSync can also run independently of `gulp watch` by  running `gulp browser-sync`.
 

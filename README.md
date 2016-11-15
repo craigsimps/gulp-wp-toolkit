@@ -74,7 +74,7 @@ Once installed, the following tasks will be available to run via `gulp <taskname
 * `gulp build:css` compiles SCSS into CSS.
 * `gulp build:rtl` generates an RTL stylesheet in the theme root.
 * `gulp build:js` concatenates Javascript files defined in `config.js` and outputs into our theme `/js/` directory.
-* `gulp build:images` optimizes all of our images stored in `/develop/images/` to `/assets/images/`.
+* `gulp build:images` optimizes all of our images stored in `/develop/images/` to `/images/`.
 * `gulp build:i18n` generates a translations file at `/languages/textdomain.pot`, where textdomain is the theme package name within `package.json`.
 * `gulp build:styleguide` uses our SCSS files to generate a live style guide at `/develop/styleguide/` using Cortana (some setup required).
 * `gulp build:potomo` converts and `.po` files within `/languages/` into `.mo` files.
@@ -94,8 +94,8 @@ Clean tasks are included so you can quickly remove any compiled assets, for exam
 ### Dependencies
 * `gulp dependencies` makes sure all dependencies are installed, then build our minified and concatenated vendor files.
 * `gulp dep:install` installs all Bower components, read from `bower.json` in our theme.
-* `gulp dep:bowercss` minifies and concatenates our Bower CSS files and outputs to `/assets/vendor/css/`.
-* `gulp dep:bowerjs` minifies and concatenates our Bower JS files and outputs to `/assets/vendor/js/`.
+* `gulp dep:bowercss` minifies and concatenates our Bower CSS files and outputs to `/vendor/css/`.
+* `gulp dep:bowerjs` minifies and concatenates our Bower JS files and outputs to `/vendor/js/`.
 
 ### Lint
 * `gulp lint` runs all of our lint tasks and outputs to console.

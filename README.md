@@ -59,19 +59,7 @@ All of the [existing configuration](config.js) can be easily overwritten by pass
 
 ### Adding Tasks
 
-Additional tasks can be added by passing an object to the `toolkit.extendTasks()` function, where the key is the name of the task.
-
-```
-toolkit.extendTasks(gulp, {
-    // Name
-    foo: [
-        ['bar'], // Dependencies
-        function() { 
-            // Function.
-        }
-    ]
-});
-```
+Additional tasks can be added by passing an object to the `toolkit.extendTasks()` function, where the key is the name of the task. [Example](example/Gulpfile.js).
 
 ### Custom Lint Files
 

@@ -51,20 +51,6 @@ toolkit.extendConfig({
 toolkit.extendTasks(gulp, { /* Task Overrides */ });
 ```
 
-## Overrides
-
-### Updating Config
-
-All of the [existing configuration](config.js) can be easily overwritten by passing your new config object into the `toolkit.extendConfig()` function. An [example from a recent project](example/Gulpfile.js) shows how easy it is to update the array of JS files to be concatenated, and change the localhost URL to point to your project.
-
-### Adding Tasks
-
-Additional tasks can be added by passing an object to the `toolkit.extendTasks()` function, where the key is the name of the task. [Example](example/Gulpfile.js).
-
-### Custom Lint Files
-
-You can override any of the lint files contained within this repository by adding a file of the same name in your theme directory. For example, if your theme directory contains a `.jshintrc` file, then it will be automatically used instead of the file included within `gulp-wp-toolkit`.
-
 ## Tasks
 
 Once installed, the following tasks will be available to run via `gulp <taskname>`.
@@ -127,3 +113,17 @@ Running `gulp serve` will launch a new BrowserSync session, proxying the localho
 
 ### Watch
 The default `gulp watch` task is available and watches our theme (PHP, SCSS, JS, images) for any file changes. On change, the associated `build` task will be run.
+
+## Overrides
+
+### Updating Config
+
+All of the [existing configuration](config.js) can be easily overwritten by passing your new config object into the `toolkit.extendConfig()` function. An [example from a recent project](example/Gulpfile.js) shows how easy it is to update the array of JS files to be concatenated, and change the localhost URL to point to your project.
+
+### Adding Tasks
+
+Additional tasks can be added by passing an object to the `toolkit.extendTasks()` function, where the key is the name of the task. [Example](example/Gulpfile.js).
+
+### Custom Lint Files
+
+You can override any of the lint files contained within this repository by adding a file of the same name in your theme directory. For example, if your theme directory contains a `.jshintrc` file, then it will be automatically used instead of the file included within `gulp-wp-toolkit`.

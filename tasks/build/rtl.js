@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp'),
     config = require('../../config'),
     rtlcss = require('gulp-rtlcss'),

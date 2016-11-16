@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 toolkit.extendConfig({
     theme: {
-        name: "Craig Simpson Theme",
+        name: 'Craig Simpson Theme',
         homepage: pkg.homepage,
         description: pkg.description,
         author: pkg.author,
@@ -31,7 +31,7 @@ toolkit.extendTasks(gulp, {
     console: [
         ['build'],
         function () {
-            console.log("This is an extended task. It depends on `build`")
+            console.log('This is an extended task. It depends on `build`');
         }
     ]
 });

@@ -9,6 +9,6 @@ module.exports = function () {
     var filesToCheck = path.join(__dirname, '../../', '**/*.js');
 
     return gulp
-        .src(filesToCheck)
+        .src([filesToCheck,'!node_modules/**'])
         .pipe(jsvalidate());
 };

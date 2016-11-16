@@ -10,7 +10,7 @@ module.exports = function () {
         lintFile = path.join(__dirname, '../../', '.jshintrc');
 
     return gulp
-        .src(filesToCheck)
+        .src([filesToCheck,'!node_modules/**'])
         .pipe(jshint(lintFile))
         .pipe(jshint.reporter('default'));
 };

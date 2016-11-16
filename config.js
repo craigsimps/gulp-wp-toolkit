@@ -19,8 +19,8 @@ module.exports = {
         php: ['**/*.php', '!vendor/**'],
         images: 'develop/images/**/*',
         css: 'develop/scss/**/*.scss',
-        js: 'develop/js/**/*.js',
-        json: '**/*.json',
+        js: ['develop/js/**/*.js', '!node_modules/**'],
+        json: ['**/*.json', '!node_modules/**'],
         bower: absPathToBower
 
     },

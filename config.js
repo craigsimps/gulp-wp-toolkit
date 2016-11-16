@@ -50,7 +50,7 @@ module.exports = {
         css: 'Stylesheet compiled and saved.',
         i18n: 'Translation file generated.',
         images: 'Image files compressed and copied.',
-        js: 'Javascript task complete.',
+        js: 'JavaScript task complete.',
         potomo: 'PO files converted to MO files.',
         styleguide: 'Styleguide task complete.'
     },

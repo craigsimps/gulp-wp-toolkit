@@ -2,15 +2,16 @@
 
 var gulp = require('gulp'),
     path = require('path'),
-    jshint = require('gulp-jshint');
+    jscs = require('gulp-jscs');
 
 module.exports = function () {
 
     var filesToCheck = path.join(__dirname, '../../', '**/*.js'),
-        lintFile = path.join(__dirname, '../../', '.jshintrc');
+        lintFile = path.join(__dirname, '../../', '.jscsrc');
 
     return gulp
-        .src([filesToCheck,'!node_modules/**'])
-        .pipe(jshint(lintFile))
-        .pipe(jshint.reporter('default'));
+        .src(filesToCheck)
+	    .pipe(jscs({
+			configPath: lintFile
+		}));
 };

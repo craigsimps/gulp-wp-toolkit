@@ -16,7 +16,7 @@ module.exports = {
         template: 'genesis'
     },
     src: {
-        php: '**/*.php',
+        php: ['**/*.php', '!vendor/**'],
         images: 'develop/images/**/*',
         css: 'develop/scss/**/*.scss',
         js: 'develop/js/**/*.js',

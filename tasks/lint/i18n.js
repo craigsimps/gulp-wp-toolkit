@@ -6,7 +6,6 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     return gulp
-        .description()
         .src(config.src.i18n)
         .pipe(checktextdomain({
             text_domain: config.theme.textdomain,

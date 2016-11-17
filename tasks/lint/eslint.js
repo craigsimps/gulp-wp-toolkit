@@ -18,7 +18,7 @@ module.exports = function () {
     }
 
     return gulp
-        .src([config.src.js,'!node_modules/**'])
+        .src(config.src.js)
         .pipe(eslint({
             configFile: lintFile
         }))

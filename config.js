@@ -11,7 +11,7 @@ module.exports = {
         description: pkg.description,
         author: pkg.author,
         version: pkg.version,
-        licence: pkg.license,
+        license: pkg.license,
         textdomain: pkg.name,
         template: 'genesis'
     },

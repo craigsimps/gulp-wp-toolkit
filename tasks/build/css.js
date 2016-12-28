@@ -23,7 +23,7 @@ module.exports = function () {
         ' * Description: <%= config.theme.description %>\n' +
         ' * Author: <%= config.theme.author %>\n' +
         ' * Version: <%= config.theme.version %>\n' +
-        ' * Licence: <%= config.theme.licence %>\n' +
+        ' * License: <%= config.theme.license %>\n' +
         ' * Text Domain: <%= config.theme.textdomain %>\n' +
         ' * Template: <%= config.theme.template %>\n' +
         ' */\n\n';

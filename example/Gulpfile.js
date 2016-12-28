@@ -14,6 +14,9 @@ toolkit.extendConfig({
         license: pkg.license,
         textdomain: pkg.name
     },
+    dest: {
+        bowerjs: 'develop/vendor/',
+    },
     js: {
         files: [
             'develop/vendor/vendor.js',

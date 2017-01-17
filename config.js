@@ -21,11 +21,12 @@ module.exports = {
         css: 'develop/scss/**/*.scss',
         js: ['develop/js/**/*.js', '!node_modules/**'],
         json: ['**/*.json', '!node_modules/**'],
-        bower: absPathToBower
-
+        bower: absPathToBower,
+        i18n: 'develop/languages/'
     },
     dest: {
-        i18n: 'languages/',
+        i18npo: 'develop/languages/',
+        i18nmo: 'languages/',
         images: 'images/',
         css: '',
         js: 'js/',

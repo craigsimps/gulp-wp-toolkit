@@ -61,9 +61,9 @@ Once installed, the following tasks will be available to run via `gulp <taskname
 * `gulp build:rtl` generates an RTL stylesheet in the theme root.
 * `gulp build:js` concatenates Javascript files defined in `config.js` and outputs into our theme `/js/` directory.
 * `gulp build:images` optimizes all of our images stored in `/develop/images/` to `/images/`.
-* `gulp build:i18n` generates a translations file at `/languages/textdomain.pot`, where textdomain is the theme package name within `package.json`.
+* `gulp build:i18n` generates a translations file at `/develop/languages/textdomain.pot`, where textdomain is the theme package name within `package.json`.
 * `gulp build:styleguide` uses our SCSS files to generate a live style guide at `/develop/styleguide/` using Cortana (some setup required).
-* `gulp build:potomo` converts and `.po` files within `/languages/` into `.mo` files.
+* `gulp build:potomo` converts and `.po` files within `develop/languages/` into `.mo` files within `/languages/`.
 
 ### Clean
 Clean tasks are included so you can quickly remove any compiled assets, for example using `gulp clean:bowerjs` will delete the concatenated `vendor.js` and `vendor.min.js` we have built from Bower Components. Tasks available are:
@@ -72,7 +72,7 @@ Clean tasks are included so you can quickly remove any compiled assets, for exam
 * `gulp clean:css` will delete `.css` files from the theme root.
 * `gulp clean:js` will delete `.js` and `.min.js` files from our `/js/` output directory.
 * `gulp clean:images` will delete all image files from our `/images/` output directory.
-* `gulp clean:i18n` will delete our generated `.pot` file within `/languages/`.
+* `gulp clean:i18n` will delete our generated `.pot` file within `/develop/languages/`, and the generated `.mo` files within `/languages/`
 * `gulp clean:bower` will delete any files compiled from Bower components (CSS & JS).
 * `gulp clean:bowerjs` will delete any JS files compiled from Bower components, usually `vendor.js` and `vendor.min.js`.
 * `gulp clean:bowercss` will delete any CSS files compiled from Bower components, usually `vendor.css` and `vendor.min.css`.

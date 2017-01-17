@@ -5,6 +5,7 @@ var config = require('../../config'),
 
 module.exports = function () {
     return del([
-        config.dest.i18n + config.theme.textdomain + '.pot'
+        config.dest.i18npo + config.theme.textdomain + '.pot',
+        config.dest.i18nmo
     ], {force: true});
 };

@@ -14,6 +14,6 @@ module.exports = function () {
             domain: config.theme.textdomain,
             destFile: config.theme.textdomain + '.pot'
         }))
-        .pipe(gulp.dest(config.dest.i18n))
+        .pipe(gulp.dest(config.dest.i18npo))
         .pipe(notify({message: config.messages.i18n}));
 };

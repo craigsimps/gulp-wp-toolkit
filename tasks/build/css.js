@@ -42,6 +42,11 @@ module.exports = function () {
         cssnano()
     ];
 
+    // Don't minify if expanded CSS is desired.
+    if ( 'expanded' === config.css.outputStyle ) {
+        postProcessors.pop();
+    }
+
     return gulp
         .src(config.src.css)
         .pipe(plumber())

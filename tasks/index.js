@@ -49,7 +49,6 @@ module.exports = {
     'self:json': [require('./self/json')],
     'self': [sequence('self:jshint', 'self:jscs', 'self:jsvalidate', 'self:json')],
 
-    'pre-commit': [['lint']],
     'bump': [require('./bump')],
     'watch': [require('./watch')],
     'serve': [['browser-sync', 'watch']],

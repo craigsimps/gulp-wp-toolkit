@@ -16,20 +16,39 @@ var gulp = require('gulp'),
     banner = require('gulp-banner'),
     notify = require('gulp-notify');
 
-module.exports = function () {
+module.exports = function() {
+    var key,
+        postProcessors,
+        themeHeader = '',
+        themeHeaderArr = {
+            // 'Header Name': 'Key under config.theme',
+            'Theme Name': 'name',
+            'Theme URI': 'themeuri',
+            Author: 'author',
+            'Author URI': 'authoruri',
+            Description: 'description',
+            Version: 'version',
+            Status: 'status',
+            License: 'license',
+            'License URI': 'licenseuri',
+            Tags: 'tags',
+            'Text Domain': 'textdomain',
+            'Domain Path': 'domainpath',
+            Template: 'template'
+        };
 
-    var themeHeader = '/*\n' +
-        ' * Theme Name: <%= config.theme.name %>\n' +
-        ' * Theme URI: <%= config.theme.homepage %>\n' +
-        ' * Description: <%= config.theme.description %>\n' +
-        ' * Author: <%= config.theme.author %>\n' +
-        ' * Version: <%= config.theme.version %>\n' +
-        ' * License: <%= config.theme.license %>\n' +
-        ' * Text Domain: <%= config.theme.textdomain %>\n' +
-        ' * Template: <%= config.theme.template %>\n' +
-        ' */\n\n';
+    // Loop through above object properties.
+    for ( key in themeHeaderArr ) {
+        // If a value has been set in config.theme.???, ...
+        if ( config.theme[themeHeaderArr[key]] ) {
+            // Then build the file header for it.
+            themeHeader = themeHeader + ' * ' + key + ': ' + config.theme[themeHeaderArr[key]]+ '\n';
+        }
+    }
 
-    var postProcessors = [
+    themeHeader = '/*#\n' + themeHeader + ' */\n\n';
+
+    postProcessors = [
         mqpacker({
             sort: true
         }),

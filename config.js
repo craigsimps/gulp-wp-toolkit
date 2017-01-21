@@ -5,16 +5,6 @@ var pkg = require('./package.json'),
     absPathToBower = path.resolve();
 
 module.exports = {
-    theme: {
-        name: 'Genesis Starter Theme',
-        homepage: pkg.homepage,
-        description: pkg.description,
-        author: pkg.author,
-        version: pkg.version,
-        license: pkg.license,
-        textdomain: pkg.name,
-        template: 'genesis'
-    },
     src: {
         php: ['**/*.php', '!vendor/**'],
         images: 'develop/images/**/*',

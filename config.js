@@ -1,7 +1,6 @@
 'use strict';
 
-var pkg = require('./package.json'),
-    path = require('path'),
+var path = require('path'),
     absPathToBower = path.resolve();
 
 module.exports = {
@@ -65,12 +64,6 @@ module.exports = {
             '_n_noop:1,2,3d',
             '_nx_noop:1,2,3c,4d'
         ]
-    },
-    js: {
-        files: [
-            'develop/js/main.js'
-        ],
-        filename: 'theme'
     },
     server: {
         url: 'library.dev'

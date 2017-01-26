@@ -45,6 +45,16 @@ toolkit.extendConfig({
         version: pkg.version,
         licence: pkg.licence,
         textdomain: pkg.name
+    },
+    js: {
+        'theme' : [
+             'develop/vendor/a.js',
+             'develop/js/b.js'
+         ],
+         'something-conditional' : [
+             'develop/js/standalone.js'
+         ]
+     }
     }
 });
 
@@ -122,11 +132,15 @@ Running `gulp serve` will launch a new BrowserSync session, proxying the localho
 ### Watch
 The default `gulp watch` task is available and watches our theme (PHP, SCSS, JS, images) for any file changes. On change, the associated `build` task will be run.
 
+## Default Theme Structure
+
+The default configuration has all of the source files in a `develop` directory, in their respective `scss`, `js`, `images`, and `languages` subdirectories. For new themes, it is recommended to follow this structure, but these paths can be overridden in the config if you prefer or need to work with a different structure.
+
 ## Overrides
 
 ### Updating Config
 
-All of the [existing configuration](config.js) can be easily overwritten by passing your new config object into the `toolkit.extendConfig()` function. An [example from a recent project](example/Gulpfile.js) shows how easy it is to update the array of JS files to be concatenated, and change the localhost URL to point to your project.
+All of the [existing configuration](config.js) can be easily overwritten by passing your new config object into the `toolkit.extendConfig()` function. An [example from a recent project](example/Gulpfile.js) shows how easy it is to update the array of JS files to be concatenated, and change the localhost URL to point to your project, for instance.
 
 ### Adding Tasks
 

@@ -6,26 +6,38 @@ var gulp = require('gulp'),
 
 toolkit.extendConfig({
     theme: {
-        name: 'Craig Simpson Theme',
-        homepage: pkg.homepage,
-        description: pkg.description,
+        name: 'Your Theme',
+        themeuri: pkg.homepage,
+        description: pkg.theme.description,
         author: pkg.author,
+        authoruri: pkg.theme.authoruri,
         version: pkg.version,
         license: pkg.license,
+        licenseuri: pkg.theme.licenseuri,
+        tags: pkg.theme.tags,
         textdomain: pkg.name
+        domainpath: pkg.theme.domainpath
+        template: 'genesis'
     },
     dest: {
         bowerjs: 'develop/vendor/',
     },
     js: {
-        files: [
-            'develop/vendor/vendor.js',
-            'develop/js/responsive-menu.js',
-            'develop/js/main.js'
-        ]
+        'letters' : [
+           'develop/js/a.js',
+           'develop/js/b.js',
+           'develop/js/c.js'
+       ],
+       'numbers' : [
+           'develop/js/1.js',
+           'develop/js/2.js'
+       ],
+       'standalone' : [
+           'develop/js/standalone.js'
+       ]
     },
     server: {
-        url: 'craigsimpson.dev'
+        url: 'example.dev'
     }
 });
 

@@ -30,6 +30,11 @@ linters:
     enabled: true
     extra_properties: []
 
+  SelectorFormat:
+      ignored_names:
+        - widget_calendar
+        - widget_search
+
   SingleLinePerProperty:
     enabled: true
     allow_single_line_rule_sets: false

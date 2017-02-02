@@ -43,11 +43,12 @@ module.exports = {
     'lint:php': [sequence('lint:phpcs', 'lint:phpmd')],
     'lint': [sequence('lint:php', 'lint:scss', 'lint:js', 'lint:i18n', 'lint:colors')],
 
+    'self:eslint': [require('./self/eslint')],
     'self:jshint': [require('./self/jshint')],
     'self:jscs': [require('./self/jscs')],
     'self:jsvalidate': [require('./self/jsvalidate')],
     'self:json': [require('./self/json')],
-    'self:js': [sequence('self:jshint', 'self:jscs', 'self:jsvalidate', 'self:json')],
+    'self:js': [sequence('self:eslint', 'self:jshint', 'self:jscs', 'self:jsvalidate', 'self:json')],
     'self': [sequence('self:js')],
 
     'bump': [require('./bump')],

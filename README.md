@@ -113,8 +113,9 @@ Clean tasks are included so you can quickly remove any compiled assets, for exam
 A number of tasks are available to test the code quality within this repository. Available tasks are:
 
 * `gulp self` run all of the below checks in parallel.
+* `gulp self:eslint` passes our JS through the ESLint JavaScript Linter.
 * `gulp self:jscs` passes our JS through the JS Coding Standards.
-* `gulp self:jshint` runs the JSHint linter on project JS files (with an ignore to stop it looking in `node_modules`).
+* `gulp self:jshint` passes our JS through the JSHint linter (with an ignore to stop it looking in `node_modules`).
 * `gulp self:json` checks that any JSON files are valid (these are defined in `config.js` else we'd be crawling all `node_modules`.
 * `gulp self:jsvalidate` checks our JS against JSValidate rules.
 

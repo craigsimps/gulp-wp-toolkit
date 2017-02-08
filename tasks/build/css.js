@@ -13,7 +13,7 @@ var gulp = require('gulp'),
     autoprefix = require('autoprefixer'),
     pxtorem = require('postcss-pxtorem'),
     cssnano = require('cssnano'),
-    banner = require('gulp-banner'),
+    banner = require('postcss-banner'),
     notify = require('gulp-notify');
 
 module.exports = function() {
@@ -42,11 +42,12 @@ module.exports = function() {
         // If a value has been set in config.theme.???, ...
         if ( config.theme[themeHeaderArr[key]] ) {
             // Then build the file header for it.
-            themeHeader = themeHeader + ' * ' + key + ': ' + config.theme[themeHeaderArr[key]]+ '\n';
+            themeHeader += key + ': ' + config.theme[themeHeaderArr[key]]+ '\n';
         }
     }
 
-    themeHeader = '/*#\n' + themeHeader + ' */\n\n';
+    // Remove final new line character.
+    themeHeader = themeHeader.slice(0, -1);
 
     postProcessors = [
         mqpacker({
@@ -58,12 +59,15 @@ module.exports = function() {
             replace: false,
             media_query: true
         }),
-        cssnano()
+        cssnano(),
+        banner({
+            banner: themeHeader
+        })
     ];
 
     // Don't minify if expanded CSS is desired.
     if ( 'expanded' === config.css.outputStyle ) {
-        postProcessors.pop();
+        postProcessors.splice(3, 1); // 3, as cssnano() is the 3rd item in the zero-based array above.
     }
 
     return gulp
@@ -75,9 +79,6 @@ module.exports = function() {
             includePaths: [].concat(bourbon, neat, normalize)
         }))
         .pipe(postcss(postProcessors))
-        .pipe(banner(themeHeader, {
-            config: config
-        }))
         .pipe(sourcemap.write('.'))
         .pipe(gulp.dest(config.dest.css))
         .pipe(notify({message: config.messages.css}));

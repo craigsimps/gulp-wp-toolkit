@@ -20,6 +20,7 @@ module.exports = function () {
     return gulp
         .src(config.src.css)
         .pipe(scsslint({
-            'config': lintFile
+            'config': lintFile,
+            'maxBuffer': 1048576
         }));
 };

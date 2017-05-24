@@ -17,6 +17,10 @@ module.exports = function () {
         configFile = themeConfigFile;
     }
 
+    if (fs.existsSync(themeConfigFile + '.dist')) {
+        configFile = themeConfigFile + '.dist';
+    }
+
     return gulp
         .src(config.src.php)
         .pipe(phpcs({

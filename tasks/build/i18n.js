@@ -11,9 +11,9 @@ module.exports = function () {
         .src(config.src.php)
         .pipe(sort())
         .pipe(potgen({
-            domain: config.theme.textdomain,
-            destFile: config.theme.textdomain + '.pot'
+            domain: config.theme.textdomain, 
+            package: config.theme.name + ' ' + config.theme.version
         }))
-        .pipe(gulp.dest(config.dest.i18npo))
+        .pipe(gulp.dest(config.dest.i18npo + config.theme.textdomain + '.pot'))
         .pipe(notify({message: config.messages.i18n}));
 };

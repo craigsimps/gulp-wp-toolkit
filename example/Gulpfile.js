@@ -94,6 +94,7 @@ toolkit.extendTasks(gulp, {
             console.log('This is an extended task. It depends on `build`');
         }
     ],
+    'lint:php': [['lint:phpcs']], // How not to run lint:phpmd.
     'zip': [[ 'zipuser', 'zipdev' ]],
     'zipuser': function() {
       return gulp.src( toolkit.config.src.zipuser, { base: './' } )

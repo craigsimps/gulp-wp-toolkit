@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.2.0] - 2017-05-25
 ### Added
-- 'lint:css' task, which uses Stylelint & WPCS ruleset.
+- `lint:css` task, which uses Stylelint & WPCS ruleset.
 
 ## [1.1.0] - 2017-05-25
 ### Added

@@ -7,7 +7,8 @@ module.exports = {
     src: {
         php: ['**/*.php', '!vendor/**'],
         images: 'develop/images/**/*',
-        css: 'develop/scss/**/*.scss',
+        scss: 'develop/scss/**/*.scss',
+        css: ['**/*.css', '!node_modules/**', '!develop/vendor/**'],
         js: ['develop/js/**/*.js', '!node_modules/**'],
         json: ['**/*.json', '!node_modules/**'],
         bower: absPathToBower,
@@ -28,7 +29,8 @@ module.exports = {
         jscs: '.jscsrc',
         phpcs: 'phpcs.xml',
         phpmd: 'phpmd.xml',
-        eslint: '.eslintrc'
+        eslint: '.eslintrc',
+        stylelint: '.stylelintrc'
     },
     bump: {
       files: [

@@ -29,6 +29,7 @@ module.exports = {
     'clean:bower': [['clean:bowercss', 'clean:bowerjs']],
     'clean': [['clean:css', 'clean:js', 'clean:images', 'clean:i18n', 'clean:bower']],
 
+    'lint:css': [require('./lint/stylelint')],
     'lint:scss': [require('./lint/scss')],
     'lint:eslint': [require('./lint/eslint')],
     'lint:jshint': [require('./lint/jshint')],

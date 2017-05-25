@@ -47,7 +47,6 @@
     "gulp-uglify": "^2.0.0",
     "gulp-uglifycss": "^1.0.6",
     "gulp-wp-pot": "^2.0.3",
-    "guppy-pre-commit": "^0.4.0",
     "jshint": "^2.9.4",
     "lodash.map": "^4.6.0",
     "lodash.merge": "^4.6.0",

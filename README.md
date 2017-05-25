@@ -61,6 +61,8 @@ toolkit.extendConfig({
 toolkit.extendTasks(gulp, { /* Task Overrides */ });
 ```
 
+Once your `Gulpfile.js` is in place, install all the dependencies using `yarn install`. If you're not already using Yarn, please see the [installation instructions](https://yarnpkg.com/lang/en/docs/install/).
+
 ## Tasks
 
 Once installed, the following tasks will be available to run via `gulp <taskname>`.

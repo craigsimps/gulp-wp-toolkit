@@ -5,7 +5,7 @@
   "version": "1.0.10",
   "description": "Set of configurable Gulp tasks for use in my WordPress themes.",
   "repository": "https://github.com/craigsimps/gulp-wp-toolkit.git",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "main": "index.js",
   "dependencies": {
     "autoprefixer": "^6.5.3",

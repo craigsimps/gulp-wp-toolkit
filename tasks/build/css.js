@@ -55,7 +55,7 @@ module.exports = function() {
         }),
         autoprefix(),
         pxtorem({
-            root_value: 16,
+            root_value: config.css.basefontsize,
             replace: false,
             media_query: true
         }),

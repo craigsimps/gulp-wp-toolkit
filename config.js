@@ -71,7 +71,8 @@ module.exports = {
         url: 'library.dev'
     },
     css: {
-        outputStyle: 'compressed'
+        outputStyle: 'compressed',
+        basefontsize: 16
     },
     bower: {
         jsfilename: 'vendor',

@@ -56,6 +56,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.0.0 - 2016-11-15
 - Initial release.
 
+[1.2.0]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.0.10...1.1.0
 [1.0.10]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.0.9...1.0.10
 [1.0.9]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.0.8...1.0.9

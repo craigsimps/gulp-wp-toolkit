@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     bs = require('browser-sync').get('SIM01');
 
 module.exports = function() {
-    gulp.watch(config.src.css, ['build:css']);
+    gulp.watch(config.src.scss, ['build:css']);
     gulp.watch(config.src.js, ['build:js']);
     gulp.watch(config.src.images, ['build:images']);
     gulp.watch(config.src.php, ['build:i18n']);

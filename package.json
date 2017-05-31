@@ -44,6 +44,7 @@
     "gulp-sort": "^2.0.0",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-stylelint": "^4",
+    "gulp-tap": "^1.0.1",
     "gulp-uglify": "^3",
     "gulp-uglifycss": "^1.0.6",
     "gulp-wp-pot": "^2.0.3",

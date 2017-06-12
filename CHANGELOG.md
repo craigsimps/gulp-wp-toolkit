@@ -101,6 +101,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial release.
 
+[1.2.1]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.0.10...1.1.0
 [1.0.10]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.0.9...1.0.10

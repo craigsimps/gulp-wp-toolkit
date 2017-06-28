@@ -43,7 +43,7 @@ toolkit.extendConfig({
         description: pkg.description,
         author: pkg.author,
         version: pkg.version,
-        licence: pkg.licence,
+        license: pkg.license,
         textdomain: pkg.name
     },
     js: {

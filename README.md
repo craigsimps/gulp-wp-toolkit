@@ -54,7 +54,6 @@ toolkit.extendConfig({
          'something-conditional' : [
              'develop/js/standalone.js'
          ]
-     }
     }
 });
 

@@ -74,7 +74,7 @@ module.exports = function() {
 
     return gulp
         .src(config.src.scss)
-        .pipe(bulksass)
+        .pipe(bulksass())
         .pipe(plumber())
         .pipe(sourcemap.init())
         .pipe(sass.sync({

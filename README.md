@@ -143,7 +143,7 @@ The default configuration has all of the source files in a `develop` directory, 
 
 As the toolkit uses "gulp-sass-bulk-import" this means imports such as `@import 'foldername/*';` will import all files within that folder this in in alphabetical order.
  
-If a file(s) need to be included first put a `@import 'foldername/_thatfile'` on the line before the wildcard import. Be aware this would typically be for variable, mixin / function type files or you would double up the outputted css so to avoid that and just use the single wildcard @import name these with a double underscore at the start to work around this. 
+If a file(s) need to be included first put a `@import 'foldername/thatfile'` on the line before the wildcard import. Be aware this would typically be for variable, mixin / function type files or you would double up the outputted css so to avoid that and just use the single wildcard @import name these with a double underscore at the start to work around this. 
 
 ## Overrides
 

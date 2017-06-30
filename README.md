@@ -130,7 +130,7 @@ Easily bump the version number of your `package.json` and `composer.json` files 
 * `gulp bump --major` updates the major version. 1.0.0 to 2.0.0
 
 ### Serve
-Running `gulp serve` will launch a new BrowserSync session, proxying the localhost URL which is defined in `config.js`. Our `gulp watch` task will also run, and your browser will live reload when any changes are detected. BrowserSync can also run independently of `gulp watch` by  running `gulp browser-sync`.
+Running `gulp serve` will launch a new BrowserSync session, proxying the localhost URL which is defined in `config.js`. Our `gulp watch` task will also run, and your browser will live reload when any changes are detected. BrowserSync can also run independently of `gulp watch` by running `gulp browser-sync`.
 
 ### Watch
 The default `gulp watch` task is available and watches our theme (PHP, SCSS, JS, images) for any file changes. On change, the associated `build` task will be run.
@@ -138,6 +138,12 @@ The default `gulp watch` task is available and watches our theme (PHP, SCSS, JS,
 ## Default Theme Structure
 
 The default configuration has all of the source files in a `develop` directory, in their respective `scss`, `js`, `images`, and `languages` subdirectories. For new themes, it is recommended to follow this structure, but these paths can be overridden in the config if you prefer or need to work with a different structure.
+
+## SASS Bulk Import
+
+As the toolkit uses "gulp-sass-bulk-import" this means imports such as `@import 'foldername/*';` will import all files within that folder this in in alphabetical order.
+ 
+If a file(s) need to be included first put a `@import 'foldername/thatfile'` on the line before the wildcard import. Be aware this would typically be for variable, mixin / function type files or you would double up the outputted css so to avoid that and just use the single wildcard @import name these with a double underscore at the start to work around this. 
 
 ## Overrides
 

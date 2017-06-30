@@ -3,12 +3,14 @@
 var gulp = require('gulp'),
     config = require('../../config'),
     sort = require('gulp-sort'),
+    plumber = require('gulp-plumber'),
     potgen = require('gulp-wp-pot'),
     notify = require('gulp-notify');
 
 module.exports = function () {
     return gulp
         .src(config.src.php)
+        .pipe(plumber())
         .pipe(sort())
         .pipe(potgen({
             domain: config.theme.textdomain, 

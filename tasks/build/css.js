@@ -9,12 +9,14 @@ var gulp = require('gulp'),
     bourbon = require('node-bourbon').includePaths,
     neat = require('node-neat').includePaths,
     postcss = require('gulp-postcss'),
+    bulksass = require('gulp-sass-bulk-import'),
     mqpacker = require('css-mqpacker'),
     autoprefix = require('autoprefixer'),
     pxtorem = require('postcss-pxtorem'),
     cssnano = require('cssnano'),
     banner = require('postcss-banner'),
     notify = require('gulp-notify');
+
 
 module.exports = function() {
     var key,
@@ -72,6 +74,7 @@ module.exports = function() {
 
     return gulp
         .src(config.src.scss)
+        .pipe(bulksass())
         .pipe(plumber())
         .pipe(sourcemap.init())
         .pipe(sass.sync({

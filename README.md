@@ -141,9 +141,9 @@ The default configuration has all of the source files in a `develop` directory, 
 
 ## SASS Bulk Import
 
-As the toolkit uses "gulp-sass-bulk-import" this means imports such as `@import 'foldername/*';` will import all files within that folder this in in alphabetical order.
+Use of `gulp-sass-bulk-import` means that whole folders of Sass partials can be easily included with `@import 'foldername/*';`. Using this method, files are loaded in alphabetical order.
  
-If a file(s) need to be included first put a `@import 'foldername/thatfile'` on the line before the wildcard import. Be aware this would typically be for variable, mixin / function type files or you would double up the outputted css so to avoid that and just use the single wildcard @import name these with a double underscore at the start to work around this. 
+If files are required to be loaded in a specific order, you can declare these immediately before the wildcard import with the normal Sass syntax `@import 'folder/file'`. 
 
 ## Overrides
 

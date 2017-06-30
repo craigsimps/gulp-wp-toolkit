@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.2] - 2017-06-30
+### Added
+- Support for bulk import of Sass files, using `gulp-sass-bulk-import`.
+- Documentation for Sass bulk import in Readme file.
+- Missing comparison link to changelog.
+- `gulp-plumber` to JS and i18n build tasks.
+
+### Fixed
+- Spelling of License in project files.
+- Typo in Gulpfile.js example within Readme file.
+
 ## [1.2.1] - 2017-05-29
 ### Fixed
 - Fix watch source for `build:css`.
@@ -101,6 +112,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial release.
 
+[1.2.2]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.2.1...1.2.2
 [1.2.1]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.0.10...1.1.0

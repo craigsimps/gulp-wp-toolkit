@@ -56,9 +56,7 @@
     "node-neat": "^1.7.2",
     "node-normalize-scss": "^1.4.0",
     "postcss-banner": "3.0.0",
-    "postcss-filter-stream": "0.0.6",
     "postcss-pxtorem": "^4.0.0",
-    "postcss-scss": "^0.4.0",
     "stylelint-config-wordpress": "^11.0.0",
     "yargs": "^6.4.0"
   }

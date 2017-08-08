@@ -1,4 +1,6 @@
-# Re-usable Gulp Toolkit for WordPress Themes
+# Gulp WP Toolkit
+
+Re-usable Gulp Toolkit for WordPress Themes.
 
 This is a Gulp package which holds all of the tasks, configuration and lint files I use when building WordPress themes.  Rather than holding all of these tasks in one giant `Gulpfile.js` within each theme I build, this is a standalone package and can be pulled in independently.
 

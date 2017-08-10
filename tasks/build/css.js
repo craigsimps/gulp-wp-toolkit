@@ -44,8 +44,12 @@ module.exports = function() {
         // If a value has been set in config.theme.???, ...
         if ( config.theme[themeHeaderArr[key]] ) {
             // Then build the file header for it.
-            themeHeader += key + ': ' + config.theme[themeHeaderArr[key]]+ '\n';
+            themeHeader += key + ': ' + config.theme[themeHeaderArr[key]] + '\n';
         }
+    }
+
+    if ( config.theme.notes ) {
+        themeHeader += '\n' + config.theme.notes;
     }
 
     // Remove final new line character.

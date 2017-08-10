@@ -62,6 +62,8 @@ toolkit.extendTasks(gulp, { /* Task Overrides */ });
 
 Once your `Gulpfile.js` is in place, install all the dependencies using `yarn install`. If you're not already using Yarn, please see the [installation instructions](https://yarnpkg.com/lang/en/docs/install/).
 
+See the files in the example directory for more advanced configuration.
+
 ## Tasks
 
 Once installed, the following tasks will be available to run via `gulp <taskname>`.
@@ -70,11 +72,11 @@ Once installed, the following tasks will be available to run via `gulp <taskname
 * `gulp build` makes sure all dependencies (Bower components) are installed, and then runs through all of the individual build tasks.
 * `gulp build:css` compiles SCSS into CSS.
 * `gulp build:rtl` generates an RTL stylesheet in the theme root.
-* `gulp build:js` concatenates Javascript files defined in `config.js` and outputs into our theme `/js/` directory.
+* `gulp build:js` concatenates JavaScript files defined in `config.js` and outputs into our theme `/js/` directory.
 * `gulp build:images` optimizes all of our images stored in `/develop/images/` to `/images/`.
 * `gulp build:i18n` generates a translations file at `/develop/languages/textdomain.pot`, where textdomain is the theme package name within `package.json`.
 * `gulp build:styleguide` uses our SCSS files to generate a live style guide at `/develop/styleguide/` using Cortana (some setup required).
-* `gulp build:potomo` converts and `.po` files within `develop/languages/` into `.mo` files within `/languages/`.
+* `gulp build:potomo` converts and `.po` files within `/develop/languages/` into `.mo` files within `/languages/`.
 
 ### Clean
 Clean tasks are included so you can quickly remove any compiled assets, for example using `gulp clean:bowerjs` will delete the concatenated `vendor.js` and `vendor.min.js` we have built from Bower Components. Tasks available are:

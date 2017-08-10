@@ -10,5 +10,14 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-wp-toolkit": "^1.0.1"
-  }
+  },
+  "theme": {
+    "name": "Your Theme Name",
+    "description": "Your theme description.",
+    "tags": "white, one-column, two-columns, fixed-width, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, rtl-language-support, translation-ready",
+    "license": "GPL-2.0+",
+    "licenseuri": "http://www.gnu.org/licenses/gpl-2.0.html",
+    "domainpath": "/languages",
+    "notes": "This is a section for notes.\nIt can be on multiple lines by using \\n instead of real line breaks."
+  },
 }

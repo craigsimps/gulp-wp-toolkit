@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 toolkit.extendConfig({
     theme: {
-        name: 'Your Theme',
+        name: pkg.theme.name,
         themeuri: pkg.homepage,
         description: pkg.theme.description,
         author: pkg.author,
@@ -17,7 +17,8 @@ toolkit.extendConfig({
         tags: pkg.theme.tags,
         textdomain: pkg.name
         domainpath: pkg.theme.domainpath
-        template: 'genesis'
+        template: 'genesis',
+        notes: pkg.theme.notes
     },
     dest: {
         bowerjs: 'develop/vendor/',

@@ -6,8 +6,6 @@ var gulp = require('gulp'),
     sourcemap = require('gulp-sourcemaps'),
     sass = require('gulp-sass'),
     normalize = require('node-normalize-scss').includePaths,
-    bourbon = require('node-bourbon').includePaths,
-    neat = require('node-neat').includePaths,
     postcss = require('gulp-postcss'),
     bulksass = require('gulp-sass-bulk-import'),
     mqpacker = require('css-mqpacker'),
@@ -83,7 +81,7 @@ module.exports = function() {
         .pipe(sourcemap.init())
         .pipe(sass.sync({
             outputStyle: config.css.outputStyle,
-            includePaths: [].concat(bourbon, neat, normalize)
+            includePaths: [].concat(normalize)
         }))
         .pipe(postcss(postProcessors))
         .pipe(sourcemap.write('.'))

@@ -19,77 +19,92 @@ var gulp = require('gulp'),
 
 
 module.exports = function() {
-    var key,
-        postProcessors,
-        themeHeader = '',
-        themeHeaderArr = {
-            // 'Header Name': 'Key under config.theme',
-            'Theme Name': 'name',
-            'Theme URI': 'themeuri',
-            Author: 'author',
-            'Author URI': 'authoruri',
-            Description: 'description',
-            Version: 'version',
-            Status: 'status',
-            License: 'license',
-            'License URI': 'licenseuri',
-            Tags: 'tags',
-            'Text Domain': 'textdomain',
-            'Domain Path': 'domainpath',
-            Template: 'template'
-        };
 
-    // Loop through above object properties.
-    for ( key in themeHeaderArr ) {
-        // If a value has been set in config.theme.???, ...
-        if ( config.theme[themeHeaderArr[key]] ) {
-            // Then build the file header for it.
-            themeHeader += key + ': ' + config.theme[themeHeaderArr[key]] + '\n';
+    var buildThemeHeader = function () {
+        var key,
+            themeHeader = '',
+            themeHeaderArr = {
+                // 'Header Name': 'Key under config.theme',
+                'Theme Name': 'name',
+                'Theme URI': 'themeuri',
+                Author: 'author',
+                'Author URI': 'authoruri',
+                Description: 'description',
+                Version: 'version',
+                Status: 'status',
+                License: 'license',
+                'License URI': 'licenseuri',
+                Tags: 'tags',
+                'Text Domain': 'textdomain',
+                'Domain Path': 'domainpath',
+                Template: 'template'
+            };
+
+        // Loop through above object properties.
+        for ( key in themeHeaderArr ) {
+            // If a value has been set in config.theme.???, ...
+            if ( config.theme[themeHeaderArr[key]] ) {
+                // Then build the file header for it.
+                themeHeader += key + ': ' + config.theme[themeHeaderArr[key]] + '\n';
+            }
         }
-    }
 
-    if ( config.theme.notes ) {
-        themeHeader += '\n' + config.theme.notes;
-    }
+        if ( config.theme.notes ) {
+            themeHeader += '\n' + config.theme.notes;
+        }
 
-    // Remove final new line character.
-    themeHeader = themeHeader.slice(0, -1);
+        // Remove final new line character.
+        themeHeader = themeHeader.slice(0, -1);
 
-    postProcessors = [
-        mqpacker({
-            sort: true
-        }),
-        autoprefix(),
-        pxtorem({
-            root_value: config.css.basefontsize,
-            replace: false,
-            media_query: true
-        }),
-        cssnano(),
-        banner({
-            banner: themeHeader
-        })
-    ];
+        return themeHeader;
+        }
 
-    // Don't minify if expanded CSS is desired.
-    if ( 'expanded' === config.css.outputStyle ) {
-        postProcessors.splice(3, 1); // 3, as cssnano() is the 3rd item in the zero-based array above.
-    }
+    var getPostProcessors = function (outputConfig, outputFilename) {
+
+        var themeHeader,
+            postProcessors = [
+                mqpacker({
+                    sort: true
+                }),
+                autoprefix(),
+                pxtorem({
+                    root_value: config.css.basefontsize,
+                    replace: false,
+                    media_query: true
+                }),
+            ];
+
+        // Add CSS Nano to further compress our output..
+        if ( 'compressed' === outputConfig.outputStyle ) {
+            postProcessors.push(cssnano());
+        }
+
+        // If we're working on the main style.css, output the theme header.
+        if ( 'style' === outputFilename ) {
+            themeHeader = buildThemeHeader();
+            postProcessors.push(banner({
+                banner: themeHeader
+            }));
+        }
+     
+        return postProcessors;
+
+    };
 
     return map(config.scss, function(outputConfig, outputFilename) {
         return gulp
         .src(outputConfig.src)
         .pipe(bulksass())
         .pipe(plumber())
-        .pipe(rename(outputFilename))
+        .pipe(rename(outputFilename + '.css'))
         .pipe(sourcemap.init())
         .pipe(sass.sync({
             outputStyle: outputConfig.outputStyle,
             includePaths: [].concat(normalize)
         }))
-        .pipe(postcss(postProcessors))
-        .pipe(sourcemap.write(outputConfig.dest))
-        .pipe(gulp.dest(config.dest.css))
+        .pipe(postcss(getPostProcessors(outputConfig, outputFilename)))
+        .pipe(sourcemap.write('./'))
+        .pipe(gulp.dest(outputConfig.dest))
         .pipe(notify({message: config.messages.css}));
     });
 };

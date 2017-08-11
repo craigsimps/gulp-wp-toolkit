@@ -13,7 +13,9 @@ var gulp = require('gulp'),
     pxtorem = require('postcss-pxtorem'),
     cssnano = require('cssnano'),
     banner = require('postcss-banner'),
-    notify = require('gulp-notify');
+    notify = require('gulp-notify'),
+    map = require('lodash.map'),
+    rename = require('gulp-rename');
 
 
 module.exports = function() {
@@ -74,17 +76,20 @@ module.exports = function() {
         postProcessors.splice(3, 1); // 3, as cssnano() is the 3rd item in the zero-based array above.
     }
 
-    return gulp
-        .src(config.src.scss)
+    return map(config.scss, function(outputConfig, outputFilename) {
+        return gulp
+        .src(outputConfig.src)
         .pipe(bulksass())
         .pipe(plumber())
+        .pipe(rename(outputFilename))
         .pipe(sourcemap.init())
         .pipe(sass.sync({
-            outputStyle: config.css.outputStyle,
+            outputStyle: outputConfig.outputStyle,
             includePaths: [].concat(normalize)
         }))
         .pipe(postcss(postProcessors))
-        .pipe(sourcemap.write('.'))
+        .pipe(sourcemap.write(outputConfig.dest))
         .pipe(gulp.dest(config.dest.css))
         .pipe(notify({message: config.messages.css}));
+    });
 };

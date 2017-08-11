@@ -6,11 +6,6 @@ module.exports = {
 
     'browser-sync': [require('./browser-sync')],
 
-    'dep:install': [require('./dependencies/install')],
-    'dep:bowercss': [require('./dependencies/bowercss')],
-    'dep:bowerjs': [require('./dependencies/bowerjs')],
-    'dependencies': [sequence('dep:install', ['dep:bowercss', 'dep:bowerjs'])],
-
     'build:css': [require('./build/css')],
     'build:rtl': [require('./build/rtl')],
     'build:js': [require('./build/js')],
@@ -24,10 +19,7 @@ module.exports = {
     'clean:js': [require('./clean/js')],
     'clean:images': [require('./clean/images')],
     'clean:i18n': [require('./clean/i18n')],
-    'clean:bowercss': [require('./clean/bowercss')],
-    'clean:bowerjs': [require('./clean/bowerjs')],
-    'clean:bower': [['clean:bowercss', 'clean:bowerjs']],
-    'clean': [['clean:css', 'clean:js', 'clean:images', 'clean:i18n', 'clean:bower']],
+    'clean': [['clean:css', 'clean:js', 'clean:images', 'clean:i18n']],
 
     'lint:css': [require('./lint/stylelint')],
     'lint:scss': [require('./lint/scss')],

@@ -6,7 +6,7 @@ This is a Gulp package which holds all of the tasks, configuration and lint file
 
 ## Installation
 
-Using the package is simple - within your custom theme create a `package.json` which has `gulp` and `gulp-wp-toolkit` as dependencies. 
+Using the package is simple - within your custom theme create a `package.json` which has `gulp` and `gulp-wp-toolkit` as dependencies.
 
 Make sure to update the other parts of your `package.json` too, as these will be pulled in to form the theme stylesheet header
 
@@ -71,7 +71,7 @@ See the files in the example directory for more advanced configuration.
 Once installed, the following tasks will be available to run via `gulp <taskname>`.
 
 ### Build
-* `gulp build` makes sure all dependencies (Bower components) are installed, and then runs through all of the individual build tasks.
+* `gulp build` runs through all of the individual build tasks.
 * `gulp build:css` compiles SCSS into CSS.
 * `gulp build:rtl` generates an RTL stylesheet in the theme root.
 * `gulp build:js` concatenates JavaScript files defined in `config.js` and outputs into our theme `/js/` directory.
@@ -81,22 +81,13 @@ Once installed, the following tasks will be available to run via `gulp <taskname
 * `gulp build:potomo` converts and `.po` files within `/develop/languages/` into `.mo` files within `/languages/`.
 
 ### Clean
-Clean tasks are included so you can quickly remove any compiled assets, for example using `gulp clean:bowerjs` will delete the concatenated `vendor.js` and `vendor.min.js` we have built from Bower Components. Tasks available are:
+Clean tasks are included so you can quickly remove any compiled assets, for example using `gulp clean:js` will delete the concatenated `.js` and `.min.js` we have built in `js/`. Tasks available are:
 
 * `gulp clean` will run all of the below tasks.
 * `gulp clean:css` will delete `.css` files from the theme root.
 * `gulp clean:js` will delete `.js` and `.min.js` files from our `/js/` output directory.
 * `gulp clean:images` will delete all image files from our `/images/` output directory.
 * `gulp clean:i18n` will delete our generated `.pot` file within `/develop/languages/`, and the generated `.mo` files within `/languages/`
-* `gulp clean:bower` will delete any files compiled from Bower components (CSS & JS).
-* `gulp clean:bowerjs` will delete any JS files compiled from Bower components, usually `vendor.js` and `vendor.min.js`.
-* `gulp clean:bowercss` will delete any CSS files compiled from Bower components, usually `vendor.css` and `vendor.min.css`.
-
-### Dependencies
-* `gulp dependencies` makes sure all dependencies are installed, then build our minified and concatenated vendor files.
-* `gulp dep:install` installs all Bower components, read from `bower.json` in our theme.
-* `gulp dep:bowercss` minifies and concatenates our Bower CSS files and outputs to `/vendor/css/`.
-* `gulp dep:bowerjs` minifies and concatenates our Bower JS files and outputs to `/vendor/js/`.
 
 ### Lint
 * `gulp lint` runs all of our lint tasks and outputs to console.
@@ -146,8 +137,12 @@ The default configuration has all of the source files in a `develop` directory, 
 ## SASS Bulk Import
 
 Use of `gulp-sass-bulk-import` means that whole folders of Sass partials can be easily included with `@import 'foldername/*';`. Using this method, files are loaded in alphabetical order.
- 
-If files are required to be loaded in a specific order, you can declare these immediately before the wildcard import with the normal Sass syntax `@import 'folder/file'`. 
+
+If files are required to be loaded in a specific order, you can declare these immediately before the wildcard import with the normal Sass syntax `@import 'folder/file'`.
+
+## Bower
+
+This toolkit no longer supports Bower. Better is to add your Bower dependencies into your themes' `package.json`, and then reference the correct file (from inside your `node_modules/`) in your `style.scss`, or the the `js` config as needed.
 
 ## Overrides
 

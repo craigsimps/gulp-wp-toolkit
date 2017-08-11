@@ -20,9 +20,6 @@ toolkit.extendConfig({
         template: 'genesis',
         notes: pkg.theme.notes
     },
-    dest: {
-        bowerjs: 'develop/vendor/',
-    },
     js: {
         'letters' : [
            'develop/js/a.js',
@@ -65,8 +62,6 @@ toolkit.extendConfig({
         'includes-vendors/**/*',
         'js/*',
         'languages/*',
-        '.bowerrc',
-        'bower.json',
         'CHANGELOG.md',
         'composer.json',
         'composer.lock',

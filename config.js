@@ -1,7 +1,6 @@
 'use strict';
 
-var path = require('path'),
-    absPathToBower = path.resolve();
+var path = require('path')
 
 module.exports = {
     src: {
@@ -11,7 +10,6 @@ module.exports = {
         css: ['**/*.css', '!node_modules/**', '!develop/vendor/**'],
         js: ['develop/js/**/*.js', '!node_modules/**'],
         json: ['**/*.json', '!node_modules/**'],
-        bower: absPathToBower,
         i18n: 'develop/languages/'
     },
     dest: {
@@ -20,8 +18,6 @@ module.exports = {
         images: 'images/',
         css: '',
         js: 'js/',
-        bowerjs: 'vendor/',
-        bowercss: 'vendor/'
     },
     lintfiles: {
         scsslint: '.scss-lint.yml',
@@ -73,9 +69,5 @@ module.exports = {
     css: {
         outputStyle: 'compressed',
         basefontsize: 16
-    },
-    bower: {
-        jsfilename: 'vendor',
-        cssfilename: 'vendor'
     }
 };

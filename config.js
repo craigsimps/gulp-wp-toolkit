@@ -67,7 +67,13 @@ module.exports = {
         url: 'library.dev'
     },
     css: {
-        outputStyle: 'compressed',
-        basefontsize: 16
+        basefontsize: 16,
+        scss: {
+            'style': {
+                src: 'develop/scss/style.scss',
+                dest: './',
+                outputStyle: 'compressed',
+            }
+        }
     }
 };

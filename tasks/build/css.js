@@ -91,7 +91,7 @@ module.exports = function() {
 
     };
 
-    return map(config.scss, function(outputConfig, outputFilename) {
+    return map(config.css.scss, function(outputConfig, outputFilename) {
         return gulp
         .src(outputConfig.src)
         .pipe(bulksass())

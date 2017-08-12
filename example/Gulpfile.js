@@ -78,7 +78,14 @@ toolkit.extendConfig({
       ]
     },
     css: {
-      outputStyle: 'expanded'
+        baseFontSize: 16, // Used by postcss-pxtorem.
+        scss: {
+            'editor-style': {
+                src: 'develop/scss/editor.scss',
+                dest: './',
+                outputStyle: compressed,
+            }
+        }
     }
 });
 

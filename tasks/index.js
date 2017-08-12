@@ -13,7 +13,7 @@ module.exports = {
     'build:i18n:potgen': [require('./build/i18n')],
     'build:i18n:potomo': [require('./build/potomo')],
     'build:i18n': [['build:i18n:potgen','build:i18n:potomo']],
-    'build': [sequence('dependencies', ['build:css', 'build:js', 'build:images', 'build:i18n'])],
+    'build': [['build:css', 'build:js', 'build:images', 'build:i18n']],
     'build:styleguide': [require('./build/styleguide')],
 
     'clean:css': [require('./clean/css')],

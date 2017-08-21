@@ -15,7 +15,8 @@ var gulp = require('gulp'),
     banner = require('postcss-banner'),
     notify = require('gulp-notify'),
     map = require('lodash.map'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    fs = require('fs');
 
 
 module.exports = function() {
@@ -86,12 +87,17 @@ module.exports = function() {
                 banner: themeHeader
             }));
         }
-     
+
         return postProcessors;
 
     };
 
     return map(config.css.scss, function(outputConfig, outputFilename) {
+
+        if (!fs.existsSync(outputConfig.src)) {
+            return console.log('ERROR >> Source file ' + outputConfig.src + ' was not found.');
+        }
+
         return gulp
         .src(outputConfig.src)
         .pipe(bulksass())

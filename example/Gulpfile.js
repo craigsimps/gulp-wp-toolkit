@@ -83,7 +83,7 @@ toolkit.extendConfig({
             'editor-style': {
                 src: 'develop/scss/editor.scss',
                 dest: './',
-                outputStyle: compressed,
+                outputStyle: 'compressed',
             }
         }
     }

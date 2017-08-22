@@ -7,6 +7,9 @@
   "repository": "https://github.com/craigsimps/gulp-wp-toolkit.git",
   "license": "MIT",
   "main": "index.js",
+  "engines": {
+    "node": ">=6"
+  },
   "dependencies": {
     "autoprefixer": "^6.5.3",
     "browser-sync": "^2.17.6",

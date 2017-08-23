@@ -102,16 +102,6 @@ Clean tasks are included so you can quickly remove any compiled assets, for exam
 * `gulp lint:i18n` runs through all PHP files to check we're using the correct textdomain.
 * `gulp lint:colors` checks colour usage within SCSS files using `gulp-colorguard`.
 
-
-### Self Checks
-A number of tasks are available to test the code quality within this repository. Available tasks are:
-
-* `gulp self` run all of the below checks in parallel.
-* `gulp self:js` runs our JS files through a number of JS linters.
-* `gulp self:jsvalidate` checks our JS against JSValidate rules.
-* `gulp self:json` checks that any JSON files are valid (these are defined in `config.js` else we'd be crawling all `node_modules`.
-* `gulp self:eslint` passes our JS through the ESLint JavaScript Linter.
-
 ### Bump
 Easily bump the version number of your `package.json` and `composer.json` files (defined in config) which will in turn bump the version of your theme. Uses [Semver](http://semver.org/).
 
@@ -124,7 +114,7 @@ Easily bump the version number of your `package.json` and `composer.json` files 
 Running `gulp serve` will launch a new BrowserSync session, proxying the localhost URL which is defined in `config.js`. Our `gulp watch` task will also run, and your browser will live reload when any changes are detected. BrowserSync can also run independently of `gulp watch` by running `gulp browser-sync`.
 
 ### Watch
-The default `gulp watch` task is available and watches our theme (PHP, SCSS, JS, images) for any file changes. On change, the associated `build` task will be run.
+The default `gulp watch` task is available and watches our theme (PHP, SCSS, JS, images) for any file changes. On change, the associated `build` task will be run. 
 
 ## Default Theme Structure
 
@@ -153,3 +143,15 @@ Additional tasks can be added by passing an object to the `toolkit.extendTasks()
 ### Custom Lint Files
 
 You can override any of the lint files contained within this repository by adding a file of the same name in your theme directory. For example, if your theme directory contains a `.eslintrc` file, then it will be automatically used instead of the file included within `gulp-wp-toolkit`.
+
+## Contributing
+
+### Code Quality
+A number of tasks are available to test the code quality within this repository. Available tasks are:
+
+* `npm run lint` run all of the below checks.
+* `npm run jsonlint` checks that our JSON files are valid.
+* `npm run esvalidate` checks our JavaScript is valid.
+* `npm run eslint` passes our JavaScript files through the ESLint JavaScript Linter.
+
+Theme authors won't need to use these; only those improving Gulp WP Toolkit will.

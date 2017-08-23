@@ -34,12 +34,6 @@ module.exports = {
     'lint:php': [sequence('lint:phpcs', 'lint:phpmd')],
     'lint': [sequence('lint:php', 'lint:js', 'lint:i18n', 'lint:colors')],
 
-    'self:eslint': [require('./self/eslint')],
-    'self:jsvalidate': [require('./self/jsvalidate')],
-    'self:json': [require('./self/json')],
-    'self:js': [sequence('self:jsvalidate', 'self:json', 'self:eslint')],
-    'self': [sequence('self:js')],
-
     'bump': [require('./bump')],
     'watch': [require('./watch')],
     'serve': [['browser-sync', 'watch']],

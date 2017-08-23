@@ -90,17 +90,19 @@ Clean tasks are included so you can quickly remove any compiled assets, for exam
 * `gulp clean:i18n` will delete our generated `.pot` file within `/develop/languages/`, and the generated `.mo` files within `/languages/`
 
 ### Lint
-* `gulp lint` runs all of our lint tasks and outputs to console.
-* `gulp lint:php` runs all of our PHP files through PHPCS & PHPMD.
-* `gulp lint:phpcs` runs all of our code through the PHP Codesniffer.
-* `gulp lint:phpmd` runs all of our code through the PHP Mess Detector.
-* `gulp lint:css` uses `stylelint` to check CSS files against the WPCS.
-* `gulp lint:js` runs our JS files through a number of JS linters.
-* `gulp lint:jsvalidate` runs JSValidate on project JS files..
-* `gulp lint:json` checks that any JSON files (for ACF, etc) are valid.
-* `gulp lint:eslint` runs ESLint on project JS files.
-* `gulp lint:i18n` runs through all PHP files to check we're using the correct textdomain.
-* `gulp lint:colors` checks colour usage within SCSS files using `gulp-colorguard`.
+* `gulp lint` runs all of the following lint tasks and outputs to console.
+    * `gulp lint:php` runs the following tasks:
+        * `gulp lint:phpcs` runs all of our code through the PHP Codesniffer.
+        * `gulp lint:phpmd` runs all of our code through the PHP Mess Detector.
+    * `gulp lint:style` runs the following tasks:
+        * `gulp lint:scss` uses `stylelint` to check SCSS files against the WPCS.
+        * `gulp lint:css` uses `stylelint` to check CSS files against the WPCS.
+        * `gulp lint:colors` checks colour usage within SCSS files using `gulp-colorguard`.
+    * `gulp lint:js` runs our JS files through a number of JS linters.
+        * `gulp lint:json` checks that any JSON files (for ACF, etc) are valid.
+        * `gulp lint:jsvalidate` runs JSValidate on project JS files..
+        * `gulp lint:eslint` runs ESLint on project JS files.
+    * `gulp lint:i18n` runs through all PHP files to check we're using the correct textdomain.
 
 ### Bump
 Easily bump the version number of your `package.json` and `composer.json` files (defined in config) which will in turn bump the version of your theme. Uses [Semver](http://semver.org/).

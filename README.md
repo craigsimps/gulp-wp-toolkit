@@ -98,7 +98,6 @@ Clean tasks are included so you can quickly remove any compiled assets, for exam
 * `gulp lint:scss` uses `scss_lint` to check over our SCSS files.
 * `gulp lint:js` runs our JS files through a number of JS linters.
 * `gulp lint:eslint` runs ESLint on project JS files.
-* `gulp lint:jshint` runs JSHint on project JS files.
 * `gulp lint:jsvalidate` runs JSValidate on project JS files..
 * `gulp lint:json` checks that any JSON files (for ACF, etc) are valid.
 * `gulp lint:i18n` runs through all PHP files to check we're using the correct textdomain.
@@ -110,7 +109,6 @@ A number of tasks are available to test the code quality within this repository.
 
 * `gulp self` run all of the below checks in parallel.
 * `gulp self:eslint` passes our JS through the ESLint JavaScript Linter.
-* `gulp self:jshint` passes our JS through the JSHint linter (with an ignore to stop it looking in `node_modules`).
 * `gulp self:json` checks that any JSON files are valid (these are defined in `config.js` else we'd be crawling all `node_modules`.
 * `gulp self:jsvalidate` checks our JS against JSValidate rules.
 
@@ -154,4 +152,4 @@ Additional tasks can be added by passing an object to the `toolkit.extendTasks()
 
 ### Custom Lint Files
 
-You can override any of the lint files contained within this repository by adding a file of the same name in your theme directory. For example, if your theme directory contains a `.jshintrc` file, then it will be automatically used instead of the file included within `gulp-wp-toolkit`.
+You can override any of the lint files contained within this repository by adding a file of the same name in your theme directory. For example, if your theme directory contains a `.eslintrc` file, then it will be automatically used instead of the file included within `gulp-wp-toolkit`.

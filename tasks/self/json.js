@@ -7,8 +7,7 @@ var gulp = require('gulp'),
 module.exports = function () {
 
     var jsonFiles = [
-        path.join(__dirname, '../../', 'package.json'),
-        path.join(__dirname, '../../', '.jshintrc')
+        path.join(__dirname, '../../', 'package.json')
     ];
 
     return gulp

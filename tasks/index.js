@@ -25,10 +25,9 @@ module.exports = {
     'lint:css': [require('./lint/stylelint')],
     'lint:scss': [require('./lint/scss')],
     'lint:eslint': [require('./lint/eslint')],
-    'lint:jshint': [require('./lint/jshint')],
     'lint:jsvalidate': [require('./lint/jsvalidate')],
     'lint:json': [require('./lint/json')],
-    'lint:js': [sequence('lint:jshint', 'lint:jsvalidate', 'lint:json')],
+    'lint:js': [sequence('lint:jsvalidate', 'lint:json')],
     'lint:i18n': [require('./lint/i18n')],
     'lint:colors': [require('./lint/colors')],
     'lint:phpcs': [require('./lint/phpcs')],
@@ -37,10 +36,9 @@ module.exports = {
     'lint': [sequence('lint:php', 'lint:scss', 'lint:js', 'lint:i18n', 'lint:colors')],
 
     'self:eslint': [require('./self/eslint')],
-    'self:jshint': [require('./self/jshint')],
     'self:jsvalidate': [require('./self/jsvalidate')],
     'self:json': [require('./self/json')],
-    'self:js': [sequence('self:eslint', 'self:jshint', 'self:jsvalidate', 'self:json')],
+    'self:js': [sequence('self:eslint', 'self:jsvalidate', 'self:json')],
     'self': [sequence('self:js')],
 
     'bump': [require('./bump')],

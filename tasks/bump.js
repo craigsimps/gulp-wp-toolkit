@@ -1,15 +1,15 @@
 'use strict';
 
-var gulp = require('gulp'),
-    config = require('../config'),
-    bump = require('gulp-bump'),
-    args = require('yargs').argv;
+const gulp   = require( 'gulp' ),
+      config = require( '../config' ),
+      bump   = require( 'gulp-bump' ),
+      args   = require( 'yargs' ).argv;
 
 module.exports = function() {
 
-    var type = args.type;
-    var version = args.version;
-    var options = {};
+    const type    = args.type,
+          version = args.version;
+    let options   = {};
 
     if (version) {
         options.version = version;

@@ -1,9 +1,9 @@
 'use strict';
 
-var gulp = require('gulp'),
-    config = require('../../config'),
-    potomo = require('gulp-potomo'),
-    notify = require('gulp-notify');
+const gulp   = require( 'gulp' ),
+      config = require( '../../config' ),
+      potomo = require( 'gulp-potomo' ),
+      notify = require( 'gulp-notify' );
 
 module.exports = function () {
     return gulp

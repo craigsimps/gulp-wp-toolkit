@@ -1,8 +1,9 @@
+/* eslint-disable */
 'use strict';
 
-var gulp = require('gulp'),
-    pkg = require('./package.json'),
-    toolkit = require('gulp-wp-toolkit');
+const gulp    = require( 'gulp' ),
+      pkg     = require( './package.json' ),
+      toolkit = require( 'gulp-wp-toolkit' );
 
 toolkit.extendConfig({
     theme: {
@@ -15,8 +16,8 @@ toolkit.extendConfig({
         license: pkg.license,
         licenseuri: pkg.theme.licenseuri,
         tags: pkg.theme.tags,
-        textdomain: pkg.name
-        domainpath: pkg.theme.domainpath
+        textdomain: pkg.name,
+        domainpath: pkg.theme.domainpath,
         template: 'genesis',
         notes: pkg.theme.notes
     },
@@ -97,7 +98,7 @@ toolkit.extendTasks(gulp, {
             console.log('This is an extended task. It depends on `build`');
         }
     ],
-    'lint:php': [['lint:phpcs']], // How not to run lint:phpmd.
+    'lint:php': [['lint:phpcs']], // How not to run lint:phpmd or lint:i18n.
     'zip': [[ 'zipuser', 'zipdev' ]],
     'zipuser': function() {
       return gulp.src( toolkit.config.src.zipuser, { base: './' } )

@@ -1,7 +1,5 @@
 'use strict';
 
-var path = require('path')
-
 module.exports = {
     src: {
         php: ['**/*.php', '!vendor/**'],
@@ -20,9 +18,6 @@ module.exports = {
         js: 'js/',
     },
     lintfiles: {
-        scsslint: '.scss-lint.yml',
-        jshint: 'jshintrc',
-        jscs: '.jscsrc',
         phpcs: 'phpcs.xml',
         phpmd: 'phpmd.xml',
         eslint: '.eslintrc',
@@ -75,5 +70,7 @@ module.exports = {
                 outputStyle: 'compressed',
             }
         }
-    }
+    },
+    js: {},
+    theme: {}
 };

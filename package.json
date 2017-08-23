@@ -27,8 +27,6 @@
     "gulp-eslint": "^4",
     "gulp-hologram": "^1.2.0",
     "gulp-imagemin": "^3.1.1",
-    "gulp-jscs": "^4.0.0",
-    "gulp-jshint": "^2.0.4",
     "gulp-jsonlint": "^1.1.2",
     "gulp-jsvalidate": "^3.0.0",
     "gulp-notify": "^3.0.0",
@@ -42,7 +40,6 @@
     "gulp-rtlcss": "^1.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sass-bulk-import": "^1.0.1",
-    "gulp-scss-lint": "^0.5",
     "gulp-sequence": "^0.4.5",
     "gulp-sort": "^2.0.0",
     "gulp-sourcemaps": "^2.4.1",
@@ -50,7 +47,6 @@
     "gulp-uglify": "^3",
     "gulp-uglifycss": "^1.0.6",
     "gulp-wp-pot": "^2.0.3",
-    "jshint": "^2.9.4",
     "lodash.map": "^4.6.0",
     "lodash.merge": "^4.6.0",
     "node-normalize-scss": "^3",
@@ -58,5 +54,26 @@
     "postcss-pxtorem": "^4.0.0",
     "stylelint-config-wordpress": "^12",
     "yargs": "^8"
+  },
+  "devDependencies": {
+    "eslint-config-gulp": "^2.1.0",
+    "jsonlint-cli": "^1.0.1"
+  },
+  "eslintConfig": {
+    "extends": "gulp",
+    "env": {
+      "es6": true
+    },
+    "rules": {
+      "keyword-spacing": 2,
+      "space-after-keywords": 0
+    }
+  },
+  "scripts": {
+    "jsonlint": "jsonlint-cli package.json .eslintrc",
+    "esvalidate": "esvalidate tasks/**/*.js utils/*.js *.js example/*.js",
+    "eslint": "eslint **/*.js",
+    "lint": "npm run jsonlint && npm run esvalidate && npm run eslint",
+    "test": "npm run lint"
   }
 }

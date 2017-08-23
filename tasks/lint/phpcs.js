@@ -1,15 +1,15 @@
 'use strict';
 
-var gulp = require('gulp'),
-    config = require('../../config'),
-    fs = require('fs'),
-    path = require('path'),
-    phpcs = require('gulp-phpcs');
+const gulp   = require( 'gulp' ),
+      config = require( '../../config' ),
+      fs     = require( 'fs' ),
+      path   = require( 'path' ),
+      phpcs  = require( 'gulp-phpcs' );
 
 module.exports = function () {
 
-    var configFile,
-        themeConfigFile = config.lintfiles.phpcs;
+    const themeConfigFile = config.lintfiles.phpcs;
+    let configFile;
 
     configFile = path.join(__dirname, '../../lintfiles/', 'phpcs.xml');
 

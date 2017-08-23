@@ -1,13 +1,13 @@
 'use strict';
 
-var gulp = require('gulp'),
-    config = require('../../config'),
-    concat = require('gulp-concat'),
-    plumber = require('gulp-plumber'),
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    notify = require('gulp-notify'),
-    map = require('lodash.map');
+const gulp    = require( 'gulp' ),
+      config  = require( '../../config' ),
+      concat  = require( 'gulp-concat' ),
+      plumber = require( 'gulp-plumber' ),
+      uglify  = require( 'gulp-uglify' ),
+      rename  = require( 'gulp-rename' ),
+      notify  = require( 'gulp-notify' ),
+      map     = require( 'lodash.map' );
 
 module.exports = function () {
     return map(config.js, function(files, filename) {

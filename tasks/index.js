@@ -1,6 +1,6 @@
 'use strict';
 
-var sequence = require('gulp-sequence');
+const sequence = require('gulp-sequence');
 
 module.exports = {
 
@@ -22,28 +22,23 @@ module.exports = {
     'clean:i18n': [require('./clean/i18n')],
     'clean': [['clean:css', 'clean:js', 'clean:images', 'clean:i18n']],
 
-    'lint:css': [require('./lint/stylelint')],
-    'lint:scss': [require('./lint/scss')],
-    'lint:eslint': [require('./lint/eslint')],
-    'lint:jshint': [require('./lint/jshint')],
-    'lint:jscs': [require('./lint/jscs')],
-    'lint:jsvalidate': [require('./lint/jsvalidate')],
-    'lint:json': [require('./lint/json')],
-    'lint:js': [sequence('lint:jshint', 'lint:jscs', 'lint:jsvalidate', 'lint:json')],
-    'lint:i18n': [require('./lint/i18n')],
+    'lint:scss': [require( './lint/stylelint-scss')],
+    'lint:css': [require( './lint/stylelint-css')],
     'lint:colors': [require('./lint/colors')],
+    'lint:style': [sequence('lint:scss', 'lint:css', 'lint:colors')],
+
+    'lint:json': [require('./lint/json')],
+    'lint:jsvalidate': [require('./lint/jsvalidate')],
+    'lint:eslint': [require('./lint/eslint')],
+    'lint:js': [sequence('lint:jsvalidate', 'lint:json', 'lint:eslint')],
+
+    'lint:i18n': [require('./lint/i18n')],
     'lint:phpcs': [require('./lint/phpcs')],
     'lint:phpmd': [require('./lint/phpmd')],
-    'lint:php': [sequence('lint:phpcs', 'lint:phpmd')],
-    'lint': [sequence('lint:php', 'lint:scss', 'lint:js', 'lint:i18n', 'lint:colors')],
+    'lint:php': [sequence('lint:i18n', 'lint:phpcs', 'lint:phpmd')],
 
-    'self:eslint': [require('./self/eslint')],
-    'self:jshint': [require('./self/jshint')],
-    'self:jscs': [require('./self/jscs')],
-    'self:jsvalidate': [require('./self/jsvalidate')],
-    'self:json': [require('./self/json')],
-    'self:js': [sequence('self:eslint', 'self:jshint', 'self:jscs', 'self:jsvalidate', 'self:json')],
-    'self': [sequence('self:js')],
+
+    'lint': [sequence('lint:style', 'lint:php', 'lint:js')],
 
     'bump': [require('./bump')],
     'watch': [require('./watch')],

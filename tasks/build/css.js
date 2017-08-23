@@ -1,98 +1,105 @@
 'use strict';
 
-var gulp = require('gulp'),
-    config = require('../../config'),
-    plumber = require('gulp-plumber'),
-    sourcemap = require('gulp-sourcemaps'),
-    sass = require('gulp-sass'),
-    normalize = require('node-normalize-scss').includePaths,
-    postcss = require('gulp-postcss'),
-    bulksass = require('gulp-sass-bulk-import'),
-    mqpacker = require('css-mqpacker'),
-    autoprefix = require('autoprefixer'),
-    pxtorem = require('postcss-pxtorem'),
-    cssnano = require('cssnano'),
-    banner = require('postcss-banner'),
-    notify = require('gulp-notify'),
-    map = require('lodash.map'),
-    rename = require('gulp-rename'),
-    fs = require('fs');
-
+const gulp       = require( 'gulp' ),
+      config     = require( '../../config' ),
+      plumber    = require( 'gulp-plumber' ),
+      sourcemap  = require( 'gulp-sourcemaps' ),
+      sass       = require( 'gulp-sass' ),
+      normalize  = require( 'node-normalize-scss' ).includePaths,
+      postcss    = require( 'gulp-postcss' ),
+      bulksass   = require( 'gulp-sass-bulk-import' ),
+      mqpacker   = require( 'css-mqpacker' ),
+      autoprefix = require( 'autoprefixer' ),
+      pxtorem    = require( 'postcss-pxtorem' ),
+      cssnano    = require( 'cssnano' ),
+      banner     = require( 'postcss-banner' ),
+      notify     = require( 'gulp-notify' ),
+      map        = require( 'lodash.map' ),
+      rename     = require( 'gulp-rename' ),
+      fs         = require( 'fs' );
 
 module.exports = function() {
 
-    var buildThemeHeader = function () {
-        var key,
-            themeHeader = '',
-            themeHeaderArr = {
-                // 'Header Name': 'Key under config.theme',
-                'Theme Name': 'name',
-                'Theme URI': 'themeuri',
-                Author: 'author',
-                'Author URI': 'authoruri',
-                Description: 'description',
-                Version: 'version',
-                Status: 'status',
-                License: 'license',
-                'License URI': 'licenseuri',
-                Tags: 'tags',
-                'Text Domain': 'textdomain',
-                'Domain Path': 'domainpath',
-                Template: 'template'
-            };
+	const buildThemeHeader = function() {
+		let key;
+		let themeHeader      = '';
+		const themeHeaderArr = {
+			// 'Header Name': 'Key under config.theme',
+			'Theme Name': 'name',
+			'Theme URI': 'themeuri',
+			Author: 'author',
+			'Author URI': 'authoruri',
+			Description: 'description',
+			Version: 'version',
+			Status: 'status',
+			License: 'license',
+			'License URI': 'licenseuri',
+			Tags: 'tags',
+			'Text Domain': 'textdomain',
+			'Domain Path': 'domainpath',
+			Template: 'template'
+		};
 
-        // Loop through above object properties.
-        for ( key in themeHeaderArr ) {
-            // If a value has been set in config.theme.???, ...
-            if ( config.theme[themeHeaderArr[key]] ) {
-                // Then build the file header for it.
-                themeHeader += key + ': ' + config.theme[themeHeaderArr[key]] + '\n';
-            }
-        }
+		// Loop through above object properties.
+		for ( key in themeHeaderArr ) {
+			// If a value has been set in config.theme.???, ...
+			if ( config.theme[ themeHeaderArr[ key ] ] ) {
+				// Then build the file header for it.
+				themeHeader += key + ': ' + config.theme[ themeHeaderArr[ key ] ] + '\n';
+			}
+		}
 
-        if ( config.theme.notes ) {
-            themeHeader += '\n' + config.theme.notes;
-        }
+		if ( config.theme.notes ) {
+			themeHeader += '\n' + config.theme.notes;
+		}
 
-        // Remove final new line character.
-        themeHeader = themeHeader.slice(0, -1);
+		// Remove final new line character.
+		themeHeader = themeHeader.slice( 0, - 1 );
 
-        return themeHeader;
-        }
+		return themeHeader;
+	};
 
-    var getPostProcessors = function (outputConfig, outputFilename) {
+	const getPostProcessors = function( outputConfig, outputFilename ) {
 
-        var themeHeader,
-            postProcessors = [
-                mqpacker({
-                    sort: true
-                }),
-                autoprefix(),
-                pxtorem({
-                    root_value: config.css.basefontsize,
-                    replace: false,
-                    media_query: true
-                }),
-            ];
+		let themeHeader;
+		const postProcessors = [
+			mqpacker(
+				{
+					sort: true
+				}
+			),
+			autoprefix(),
+			pxtorem(
+				{
+					root_value: config.css.basefontsize,
+					replace: false,
+					media_query: true
+				}
+			),
+		];
 
-        // Add CSS Nano to further compress our output..
-        if ( 'compressed' === outputConfig.outputStyle ) {
-            postProcessors.push(cssnano());
-        }
+		// Add CSS Nano to further compress our output..
+		if ( 'compressed' === outputConfig.outputStyle ) {
+			postProcessors.push( cssnano() );
+		}
 
-        // If we're working on the main style.css, output the theme header.
-        if ( 'style' === outputFilename ) {
-            themeHeader = buildThemeHeader();
-            postProcessors.push(banner({
-                banner: themeHeader
-            }));
-        }
+		// If we're working on the main style.css, output the theme header.
+		if ( 'style' === outputFilename ) {
+			themeHeader = buildThemeHeader();
+			postProcessors.push(
+				banner(
+					{
+						banner: themeHeader
+					}
+                )
+            );
+		}
 
-        return postProcessors;
+		return postProcessors;
 
-    };
+	};
 
-    return map(config.css.scss, function(outputConfig, outputFilename) {
+	return map(config.css.scss, function(outputConfig, outputFilename) {
 
         if (!fs.existsSync(outputConfig.src)) {
             return console.log('ERROR >> Source file ' + outputConfig.src + ' was not found.');

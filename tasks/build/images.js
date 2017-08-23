@@ -1,11 +1,11 @@
 'use strict';
 
-var gulp = require('gulp'),
-    config = require('../../config'),
-    changed = require('gulp-changed'),
-    cache = require('gulp-cache'),
-    imagemin = require('gulp-imagemin'),
-    notify = require('gulp-notify');
+const gulp     = require( 'gulp' ),
+      config   = require( '../../config' ),
+      changed  = require( 'gulp-changed' ),
+      cache    = require( 'gulp-cache' ),
+      imagemin = require( 'gulp-imagemin' ),
+      notify   = require( 'gulp-notify' );
 
 module.exports = function () {
     return gulp

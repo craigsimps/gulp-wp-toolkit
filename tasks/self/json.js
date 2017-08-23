@@ -8,7 +8,6 @@ module.exports = function () {
 
     var jsonFiles = [
         path.join(__dirname, '../../', 'package.json'),
-        path.join(__dirname, '../../', '.jscsrc'),
         path.join(__dirname, '../../', '.jshintrc')
     ];
 

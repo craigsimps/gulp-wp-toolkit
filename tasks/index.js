@@ -1,6 +1,6 @@
 'use strict';
 
-var sequence = require('gulp-sequence');
+const sequence = require('gulp-sequence');
 
 module.exports = {
 
@@ -26,10 +26,9 @@ module.exports = {
     'lint:scss': [require('./lint/scss')],
     'lint:eslint': [require('./lint/eslint')],
     'lint:jshint': [require('./lint/jshint')],
-    'lint:jscs': [require('./lint/jscs')],
     'lint:jsvalidate': [require('./lint/jsvalidate')],
     'lint:json': [require('./lint/json')],
-    'lint:js': [sequence('lint:jshint', 'lint:jscs', 'lint:jsvalidate', 'lint:json')],
+    'lint:js': [sequence('lint:jshint', 'lint:jsvalidate', 'lint:json')],
     'lint:i18n': [require('./lint/i18n')],
     'lint:colors': [require('./lint/colors')],
     'lint:phpcs': [require('./lint/phpcs')],
@@ -39,10 +38,9 @@ module.exports = {
 
     'self:eslint': [require('./self/eslint')],
     'self:jshint': [require('./self/jshint')],
-    'self:jscs': [require('./self/jscs')],
     'self:jsvalidate': [require('./self/jsvalidate')],
     'self:json': [require('./self/json')],
-    'self:js': [sequence('self:eslint', 'self:jshint', 'self:jscs', 'self:jsvalidate', 'self:json')],
+    'self:js': [sequence('self:eslint', 'self:jshint', 'self:jsvalidate', 'self:json')],
     'self': [sequence('self:js')],
 
     'bump': [require('./bump')],

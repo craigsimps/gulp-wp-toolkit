@@ -22,7 +22,6 @@ module.exports = {
     lintfiles: {
         scsslint: '.scss-lint.yml',
         jshint: 'jshintrc',
-        jscs: '.jscsrc',
         phpcs: 'phpcs.xml',
         phpmd: 'phpmd.xml',
         eslint: '.eslintrc',

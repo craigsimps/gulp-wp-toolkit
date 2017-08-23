@@ -96,9 +96,9 @@ Clean tasks are included so you can quickly remove any compiled assets, for exam
 * `gulp lint:phpmd` runs all of our code through the PHP Mess Detector.
 * `gulp lint:css` uses `stylelint` to check CSS files against the WPCS.
 * `gulp lint:js` runs our JS files through a number of JS linters.
-* `gulp lint:eslint` runs ESLint on project JS files.
 * `gulp lint:jsvalidate` runs JSValidate on project JS files..
 * `gulp lint:json` checks that any JSON files (for ACF, etc) are valid.
+* `gulp lint:eslint` runs ESLint on project JS files.
 * `gulp lint:i18n` runs through all PHP files to check we're using the correct textdomain.
 * `gulp lint:colors` checks colour usage within SCSS files using `gulp-colorguard`.
 
@@ -107,9 +107,10 @@ Clean tasks are included so you can quickly remove any compiled assets, for exam
 A number of tasks are available to test the code quality within this repository. Available tasks are:
 
 * `gulp self` run all of the below checks in parallel.
-* `gulp self:eslint` passes our JS through the ESLint JavaScript Linter.
-* `gulp self:json` checks that any JSON files are valid (these are defined in `config.js` else we'd be crawling all `node_modules`.
+* `gulp self:js` runs our JS files through a number of JS linters.
 * `gulp self:jsvalidate` checks our JS against JSValidate rules.
+* `gulp self:json` checks that any JSON files are valid (these are defined in `config.js` else we'd be crawling all `node_modules`.
+* `gulp self:eslint` passes our JS through the ESLint JavaScript Linter.
 
 ### Bump
 Easily bump the version number of your `package.json` and `composer.json` files (defined in config) which will in turn bump the version of your theme. Uses [Semver](http://semver.org/).

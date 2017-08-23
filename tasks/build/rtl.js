@@ -10,6 +10,6 @@ module.exports = function () {
     return gulp.src('style.css')
         .pipe(rtlcss())
         .pipe(rename('rtl.css'))
-        .pipe(replace(/\/\*\#\ssourceMappingURL(.+)$/gm, ''))
+        .pipe(replace(/\/\*#\ssourceMappingURL(.+)$/gm, ''))
         .pipe(gulp.dest(config.dest.css));
 };

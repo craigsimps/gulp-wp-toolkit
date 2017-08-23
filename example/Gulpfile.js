@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use strict';
 
 var gulp = require('gulp'),
@@ -15,8 +16,8 @@ toolkit.extendConfig({
         license: pkg.license,
         licenseuri: pkg.theme.licenseuri,
         tags: pkg.theme.tags,
-        textdomain: pkg.name
-        domainpath: pkg.theme.domainpath
+        textdomain: pkg.name,
+        domainpath: pkg.theme.domainpath,
         template: 'genesis',
         notes: pkg.theme.notes
     },

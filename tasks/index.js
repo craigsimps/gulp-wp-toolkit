@@ -32,10 +32,9 @@ module.exports = {
     'lint:eslint': [require('./lint/eslint')],
     'lint:js': [sequence('lint:jsvalidate', 'lint:json', 'lint:eslint')],
 
-    'lint:i18n': [require('./lint/i18n')],
     'lint:phpcs': [require('./lint/phpcs')],
     'lint:phpmd': [require('./lint/phpmd')],
-    'lint:php': [sequence('lint:i18n', 'lint:phpcs', 'lint:phpmd')],
+    'lint:php': [sequence('lint:phpcs', 'lint:phpmd')],
 
 
     'lint': [sequence('lint:style', 'lint:php', 'lint:js')],

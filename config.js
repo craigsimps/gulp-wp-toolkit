@@ -20,7 +20,6 @@ module.exports = {
         js: 'js/',
     },
     lintfiles: {
-        scsslint: '.scss-lint.yml',
         phpcs: 'phpcs.xml',
         phpmd: 'phpmd.xml',
         eslint: '.eslintrc',

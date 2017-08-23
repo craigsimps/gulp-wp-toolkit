@@ -23,7 +23,6 @@ module.exports = {
     'clean': [['clean:css', 'clean:js', 'clean:images', 'clean:i18n']],
 
     'lint:css': [require('./lint/stylelint')],
-    'lint:scss': [require('./lint/scss')],
     'lint:eslint': [require('./lint/eslint')],
     'lint:jsvalidate': [require('./lint/jsvalidate')],
     'lint:json': [require('./lint/json')],
@@ -33,7 +32,7 @@ module.exports = {
     'lint:phpcs': [require('./lint/phpcs')],
     'lint:phpmd': [require('./lint/phpmd')],
     'lint:php': [sequence('lint:phpcs', 'lint:phpmd')],
-    'lint': [sequence('lint:php', 'lint:scss', 'lint:js', 'lint:i18n', 'lint:colors')],
+    'lint': [sequence('lint:php', 'lint:js', 'lint:i18n', 'lint:colors')],
 
     'self:eslint': [require('./self/eslint')],
     'self:jsvalidate': [require('./self/jsvalidate')],

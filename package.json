@@ -40,7 +40,6 @@
     "gulp-rtlcss": "^1.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sass-bulk-import": "^1.0.1",
-    "gulp-scss-lint": "^0.5",
     "gulp-sequence": "^0.4.5",
     "gulp-sort": "^2.0.0",
     "gulp-sourcemaps": "^2.4.1",

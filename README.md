@@ -95,6 +95,7 @@ Clean tasks are included so you can quickly remove any compiled assets, for exam
         * `gulp lint:i18n` runs through all PHP files to check we're using the correct textdomain.
         * `gulp lint:phpcs` runs all of our code through the PHP Codesniffer.
         * `gulp lint:phpmd` runs all of our code through the PHP Mess Detector.
+        
     * `gulp lint:style` runs the following tasks:
         * `gulp lint:scss` uses `stylelint` to check SCSS files against the WPCS.
         * `gulp lint:css` uses `stylelint` to check CSS files against the WPCS.

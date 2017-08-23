@@ -1,15 +1,15 @@
 'use strict';
 
-var gulp = require('gulp'),
-    config = require('../../config'),
-    fs = require('fs'),
-    path = require('path'),
-    phpmd = require('gulp-phpmd-plugin');
+const gulp   = require( 'gulp' ),
+      config = require( '../../config' ),
+      fs     = require( 'fs' ),
+      path   = require( 'path' ),
+      phpmd  = require( 'gulp-phpmd-plugin' );
 
 module.exports = function () {
 
-    var configFile,
-        themeConfigFile = config.lintfiles.phpmd;
+    const themeConfigFile = config.lintfiles.phpmd;
+    let configFile;
 
     configFile = path.join(__dirname, '../../lintfiles/', 'phpmd.xml');
 

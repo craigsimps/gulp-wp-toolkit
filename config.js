@@ -70,5 +70,7 @@ module.exports = {
                 outputStyle: 'compressed',
             }
         }
-    }
+    },
+    js: {},
+    theme: {}
 };

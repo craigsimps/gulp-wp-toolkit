@@ -1,15 +1,15 @@
 'use strict';
 
-var gulp = require('gulp'),
-    config = require('../../config'),
-    fs = require('fs'),
-    path = require('path'),
-    stylelint = require('gulp-stylelint');
+const gulp      = require( 'gulp' ),
+      config    = require( '../../config' ),
+      fs        = require( 'fs' ),
+      path      = require( 'path' ),
+      stylelint = require( 'gulp-stylelint' );
 
 module.exports = function () {
 
-    var lintFile,
-        themeLintFile = config.lintfiles.stylelint;
+    const themeLintFile = config.lintfiles.stylelint;
+    let lintFile;
 
     lintFile = path.join(__dirname, '../../lintfiles/', '.stylelintrc');
 

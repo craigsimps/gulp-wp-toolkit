@@ -1,9 +1,9 @@
 'use strict';
 
-var gulp = require('gulp'),
-    config = require('../../config'),
-    hologram = require('gulp-hologram'),
-    notify = require('gulp-notify');
+const gulp     = require( 'gulp' ),
+      config   = require( '../../config' ),
+      hologram = require( 'gulp-hologram' ),
+      notify   = require( 'gulp-notify' );
 
 module.exports = function () {
     return gulp

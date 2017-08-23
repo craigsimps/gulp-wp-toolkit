@@ -1,9 +1,9 @@
 /* eslint-disable */
 'use strict';
 
-var gulp = require('gulp'),
-    pkg = require('./package.json'),
-    toolkit = require('gulp-wp-toolkit');
+const gulp    = require( 'gulp' ),
+      pkg     = require( './package.json' ),
+      toolkit = require( 'gulp-wp-toolkit' );
 
 toolkit.extendConfig({
     theme: {

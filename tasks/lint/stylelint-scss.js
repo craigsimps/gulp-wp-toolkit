@@ -11,7 +11,7 @@ module.exports = function () {
     const themeLintFile = config.lintfiles.stylelint;
     let lintFile;
 
-    lintFile = path.join(__dirname, '../../lintfiles/', '.stylelintrc');
+    lintFile = path.join(__dirname, '../../lintfiles/', '.stylelintscssrc');
 
     if (fs.existsSync(themeLintFile)) {
         lintFile = themeLintFile;

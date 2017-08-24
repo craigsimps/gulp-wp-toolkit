@@ -112,7 +112,7 @@ Easily bump the version number of your `package.json` and `composer.json` files 
 * `gulp bump --major` updates the major version. 1.0.0 to 2.0.0
 
 ### Serve
-Running `gulp serve` will launch a new BrowserSync session, proxying the localhost URL which is defined in `config.js`. Our `gulp watch` task will also run, and your browser will live reload when any changes are detected. BrowserSync can also run independently of `gulp watch` by running `gulp browser-sync`.
+Running `gulp serve` will launch a new BrowserSync session, proxying the localhost URL which is defined in your theme's config under `server` -> `url` key. If the key is not defined, then BrowserSync won't start. Our `gulp watch` task will also run, and your browser will live reload when any changes are detected. BrowserSync can also run independently of `gulp watch` by running `gulp browser-sync`.
 
 ### Watch
 The default `gulp watch` task is available and watches our theme (PHP, SCSS, JS, images) for any file changes. On change, the associated `build` task will be run. 

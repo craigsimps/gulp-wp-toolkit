@@ -40,9 +40,6 @@ module.exports = {
     hologram: {
         config: 'hologram_config.yml'
     },
-    server: {
-        url: 'library.dev'
-    },
     css: {
         basefontsize: 16,
         scss: {

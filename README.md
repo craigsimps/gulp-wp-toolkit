@@ -71,37 +71,52 @@ See the files in the example directory for more advanced configuration.
 Once installed, the following tasks will be available to run via `gulp <taskname>`.
 
 ### Build
-* `gulp build` runs through all of the individual build tasks.
-* `gulp build:css` compiles SCSS into CSS.
-* `gulp build:rtl` generates an RTL stylesheet in the theme root.
-* `gulp build:js` concatenates JavaScript files defined in `config.js` and outputs into our theme `/js/` directory.
-* `gulp build:images` optimizes all of our images stored in `/develop/images/` to `/images/`.
-* `gulp build:i18n` generates a translations file at `/develop/languages/textdomain.pot`, where textdomain is the theme package name within `package.json`.
-* `gulp build:styleguide` uses our SCSS files to generate a live style guide at `/develop/styleguide/` using Cortana (some setup required).
-* `gulp build:potomo` converts and `.po` files within `/develop/languages/` into `.mo` files within `/languages/`.
+* `gulp build` runs the following tasks:
+    * `gulp build:css` compiles SCSS into CSS.
+    * `gulp build:js` concatenates JavaScript files defined in `config.js` and outputs into the theme `/js/` directory.
+    * `gulp build:images` optimizes all of the images stored in `/develop/images/` to `/images/`.
+    * `gulp build:i18n` runs the following tasks:
+        * `gulp build:i18npotgen` generates a translations file at `/develop/languages/textdomain.pot`, where textdomain is the theme package name within `package.json`.
+        * `gulp build:potomo` converts and `.po` files within `/develop/languages/` into `.mo` files within `/languages/`.
+* `gulp build:styleguide` (experimental) uses the SCSS files to generate a live style guide at `/develop/styleguide/` using Cortana (some setup required).
+* `gulp build:rtl` (experimental) generates an RTL stylesheet in the theme root.
 
 ### Clean
 Clean tasks are included so you can quickly remove any compiled assets, for example using `gulp clean:js` will delete the concatenated `.js` and `.min.js` we have built in `js/`. Tasks available are:
 
-* `gulp clean` will run all of the below tasks.
-* `gulp clean:css` will delete `.css` files from the theme root.
-* `gulp clean:js` will delete `.js` and `.min.js` files from our `/js/` output directory.
-* `gulp clean:images` will delete all image files from our `/images/` output directory.
-* `gulp clean:i18n` will delete our generated `.pot` file within `/develop/languages/`, and the generated `.mo` files within `/languages/`
+* `gulp clean` runs the following tasks:
+    * `gulp clean:css` will delete `.css` and `.css.map` files from the theme root.
+    * `gulp clean:js` will delete `.js` and `.min.js` files from the `/js/` output directory.
+    * `gulp clean:images` will delete all image files from the `/images/` output directory.
+    * `gulp clean:i18n` will delete the generated `.pot` file within `/develop/languages/`, and the generated `.mo` files within `/languages/`
 
 ### Lint
-* `gulp lint` runs all of the following lint tasks and outputs to console:
+* `gulp lint` runs the following tasks:
     * `gulp lint:php` runs the following tasks:
-        * `gulp lint:phpcs` runs all of our code through the PHP Codesniffer.
-        * `gulp lint:phpmd` runs all of our code through the PHP Mess Detector.        
+        * `gulp lint:phpcs` check the code with PHP_CodeSniffer against the WordPress Coding Standards.
+        * `gulp lint:phpmd` check the code with PHP Mess Detector.        
     * `gulp lint:style` runs the following tasks:
-        * `gulp lint:scss` uses `stylelint` to check SCSS files against the WPCS.
-        * `gulp lint:css` uses `stylelint` to check CSS files against the WPCS.
+        * `gulp lint:scss` uses `stylelint` to check SCSS files against the WordPress Coding Standards.
+        * `gulp lint:css` uses `stylelint` to check CSS files against the WordPress Coding Standards.
         * `gulp lint:colors` checks colour usage within SCSS files using `gulp-colorguard`.
-    * `gulp lint:js` runs our JS files through a number of JS linters.
+    * `gulp lint:js` runs the following tasks:
         * `gulp lint:json` checks that any JSON files (for ACF, etc) are valid.
         * `gulp lint:jsvalidate` runs JSValidate on project JS files..
         * `gulp lint:eslint` runs ESLint on project JS files.
+
+### Watch
+The default `gulp watch` task is available and watches the theme (PHP, SCSS, JS, images) for any file changes. On change, the associated `build` task will be run.
+ 
+### Serve
+Running `gulp serve` will launch a new BrowserSync session, proxying the localhost URL which is defined in your theme's config under `server` -> `url` key. If the key is not defined, then BrowserSync won't start.
+
+Our `gulp watch` task will also run, and your browser will live reload when any changes are detected.
+
+BrowserSync can also run independently of `gulp watch` by running `gulp browser-sync`.
+
+### Default
+
+The default task (`gulp`) will run `gulp build` and `gulp serve`. 
 
 ### Bump
 Easily bump the version number of your `package.json` and `composer.json` files (defined in config) which will in turn bump the version of your theme. Uses [Semver](http://semver.org/).
@@ -111,11 +126,6 @@ Easily bump the version number of your `package.json` and `composer.json` files 
 * `gulp bump --minor` updates the minor version. 1.0.0 to 1.1.0
 * `gulp bump --major` updates the major version. 1.0.0 to 2.0.0
 
-### Serve
-Running `gulp serve` will launch a new BrowserSync session, proxying the localhost URL which is defined in your theme's config under `server` -> `url` key. If the key is not defined, then BrowserSync won't start. Our `gulp watch` task will also run, and your browser will live reload when any changes are detected. BrowserSync can also run independently of `gulp watch` by running `gulp browser-sync`.
-
-### Watch
-The default `gulp watch` task is available and watches our theme (PHP, SCSS, JS, images) for any file changes. On change, the associated `build` task will be run. 
 
 ## Default Theme Structure
 
@@ -171,7 +181,7 @@ Additional tasks can be added by passing an object to the `toolkit.extendTasks()
 
 ### Custom Lint Files
 
-You can override any of the lint files contained within this repository by adding a file of the same name in your theme directory. For example, if your theme directory contains a `.eslintrc` file, then it will be automatically used instead of the file included within `gulp-wp-toolkit`.
+You can override any of the lint files contained within this repository by adding a file of the same name in your theme directory. For example, if your theme directory contains a `.eslintrc` file or `phpcs.xml.dist`, then it will be automatically used instead of the file included within `gulp-wp-toolkit`.
 
 ## Contributing to Gulp WP Toolkit
 

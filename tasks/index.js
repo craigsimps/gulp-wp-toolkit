@@ -41,6 +41,6 @@ module.exports = {
   'bump': [require('./bump')],
   'watch': [require('./watch')],
   'serve': [['browser-sync', 'watch']],
-  'default': [['build', 'browser-sync', 'watch']],
+  'default': [['build', 'serve']],
 
 };

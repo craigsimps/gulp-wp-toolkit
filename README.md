@@ -75,7 +75,7 @@ Once installed, the following tasks will be available to run via `gulp <taskname
 * `gulp build:css` compiles SCSS into CSS.
 * `gulp build:rtl` generates an RTL stylesheet in the theme root.
 * `gulp build:js` concatenates JavaScript files defined in `config.js` and outputs into our theme `/js/` directory.
-* `gulp build:images` optimizes all of our images stored in `/develop/images/` to `/images/`.
+* `gulp build:images` optimizes all of our images stored in `/develop/images/` to `/images/`. If present, your `screenshot.png` (or other file extension) will be automatically output in the theme root.
 * `gulp build:i18n` generates a translations file at `/develop/languages/textdomain.pot`, where textdomain is the theme package name within `package.json`.
 * `gulp build:styleguide` uses our SCSS files to generate a live style guide at `/develop/styleguide/` using Cortana (some setup required).
 * `gulp build:potomo` converts and `.po` files within `/develop/languages/` into `.mo` files within `/languages/`.

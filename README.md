@@ -1,8 +1,6 @@
 # Gulp WP Toolkit
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/craigsimps/gulp-wp-toolkit.svg)](https://greenkeeper.io/)
-
-[![Build Status](https://travis-ci.org/craigsimps/gulp-wp-toolkit.svg?branch=master)](https://travis-ci.org/craigsimps/gulp-wp-toolkit)
+[![Build Status](https://travis-ci.org/craigsimps/gulp-wp-toolkit.svg?branch=master)](https://travis-ci.org/craigsimps/gulp-wp-toolkit) [![Greenkeeper badge](https://badges.greenkeeper.io/craigsimps/gulp-wp-toolkit.svg)](https://greenkeeper.io/) 
 
 Re-usable Gulp Toolkit for WordPress Themes.
 

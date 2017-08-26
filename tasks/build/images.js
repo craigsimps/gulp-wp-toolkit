@@ -3,15 +3,26 @@
 const gulp = require('gulp'),
   config = require('../../config'),
   changed = require('gulp-changed'),
-  cache = require('gulp-cache'),
   imagemin = require('gulp-imagemin'),
-  notify = require('gulp-notify');
+  notify = require('gulp-notify'),
+  filter = require('gulp-filter');
 
 module.exports = function() {
+  const allButScreenshot = filter(['**/*', '!**/screenshot.*'], {restore: true});
+  const onlyScreenshot = filter(['**/screenshot.*']);
+
   return gulp.src(config.src.images)
     .pipe(changed(config.dest.images))
-    .pipe(cache(
-      imagemin({optimizationLevel: 3, progressive: true, interlaced: true})))
+    .pipe(imagemin({
+      verbose: true,
+      optimizationLevel: 3,
+      progressive: true,
+      interlaced: true
+    }))
+    .pipe(allButScreenshot)
     .pipe(gulp.dest(config.dest.images))
+    .pipe(allButScreenshot.restore)
+    .pipe(onlyScreenshot)
+    .pipe(gulp.dest('./'))
     .pipe(notify({message: config.messages.images}));
 };

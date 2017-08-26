@@ -30,10 +30,10 @@ module.exports = {
       ]
     },
     messages: {
-        css: 'Stylesheet compiled and saved.',
+        css: 'Stylesheet compiled and saved: <%= file.relative %>',
         i18n: 'Translation file generated.',
-        images: 'Image files compressed and copied.',
-        js: 'JavaScript task complete.',
+        images: 'Image files compressed and copied: <%= file.relative %>',
+        js: 'JavaScript task complete: <%= file.relative %>',
         potomo: 'PO files converted to MO files.',
         styleguide: 'Styleguide task complete.'
     },

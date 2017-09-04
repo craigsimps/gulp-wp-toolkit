@@ -4,6 +4,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.0] - 2017-09-04
+### Added
+* Support for multiple .css files to be compiled.
+* Minimum node engine version set to 6.0.0. Props [GaryJones](https://github.com/GaryJones/)
+* Clarification of package name in README.md. Props [GaryJones](https://github.com/GaryJones/)
+* Support for notes within `style.css` stylesheet header. Props [GaryJones](https://github.com/GaryJones/)
+* Self-linting tasks now available as NPM scripts. Props [GaryJones](https://github.com/GaryJones/)
+* `.editorconfig` file to make sure all contributors have the same preconfigured editor rules. Props [GaryJones](https://github.com/GaryJones/)
+* GitHub documents with templates for issue reporting, contributions and pull requests. Props [GaryJones](https://github.com/GaryJones/)
+* Typical theme structure example to documentation. Props [GaryJones](https://github.com/GaryJones/)
+* Support for `develop/images/screenshot.png` to be optimized and moved to theme root.
+* Improve stylesheet, image and JavaScript notifications to include filename.
+
+### Changed
+* Use `const` and `let` instead of `var`. Props [GaryJones](https://github.com/GaryJones/)
+* Refreshed JS lint tasks, removing JSCS & JSHint and switching to ESLint and Stylelint. Props [GaryJones](https://github.com/GaryJones/)
+* Refreshed CSS/ SCSS lint tasks to use Stylelint for both, with separate rulesets. Props [GaryJones](https://github.com/GaryJones/) and [ntwb](https://github.com/ntwb)
+* Dependencies updated to most recent versions. Props [GaryJones](https://github.com/GaryJones/)
+* Split `build:i18n` into subtasks which run `potgen` and `potomo`. Props [GaryJones](https://github.com/GaryJones/)
+* Lack of `bower.json` file will no longer result in build failure.
+* Moved base font size used in `gulp-pxtorem` into the `config.js` file.
+* Colorguard task now runs on the compiled `.css` file.
+* Browser Sync now only triggered when a `server` variable is found in config. Props [GaryJones](https://github.com/GaryJones/)
+* Improvements to the documentation of tasks, including reordering sections and clarifying descriptions. Props [GaryJones](https://github.com/GaryJones/)
+* Default task simplified to run `build` and `serve`.
+
+### Removed
+* Support for `node-bourbon` and `node-neat`. Props [GaryJones](https://github.com/GaryJones/)
+* Support for Bower. Props [GaryJones](https://github.com/GaryJones/)
+* Gulp-based self-linting tasks. Props [GaryJones](https://github.com/GaryJones/)
+* lint:i18n (checktextdomain) task in favour of PHPCS WPCS check. Props [GaryJones](https://github.com/GaryJones/)
+
 ## [1.2.2] - 2017-06-30
 ### Added
 - Support for bulk import of Sass files, using `gulp-sass-bulk-import`.
@@ -112,6 +144,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial release.
 
+[2.0.0]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.2.2...2.0.0
 [1.2.2]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.2.1...1.2.2
 [1.2.1]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.1.0...1.2.0

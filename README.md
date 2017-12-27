@@ -26,7 +26,7 @@ Add a `package.json` to your theme like so:
   "main": "Gulpfile.js",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-wp-toolkit": "^1.0.1"
+    "gulp-wp-toolkit": "^2"
   }
 }
 ```

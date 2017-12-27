@@ -79,7 +79,9 @@ toolkit.extendConfig({
 		],
 	},
 	css: {
-		baseFontSize: 16, // Used by postcss-pxtorem.
+		basefontsize: 16, // Used by postcss-pxtorem.
+        remreplace: false, // Used by postcss-pxtorem.
+        remmediaquery: true, // Used by postcss-pxtorem.
 		scss: {
 			'editor-style': {
 				src: 'develop/scss/editor.scss',

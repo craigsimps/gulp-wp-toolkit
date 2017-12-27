@@ -42,6 +42,8 @@ module.exports = {
     },
     css: {
         basefontsize: 16,
+        remreplace: false,
+        remmediaquery: true,
         scss: {
             'style': {
                 src: 'develop/scss/style.scss',

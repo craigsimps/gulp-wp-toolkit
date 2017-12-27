@@ -73,8 +73,8 @@ module.exports = function() {
       pxtorem(
         {
           root_value: config.css.basefontsize,
-          replace: false,
-          media_query: true,
+          replace: config.css.remreplace,
+          media_query: config.css.remmediaquery,
         }
       ),
     ];

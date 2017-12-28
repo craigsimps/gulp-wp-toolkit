@@ -19,7 +19,7 @@
     "del": "^3",
     "eslint-config-wordpress": "^2",
     "gulp": "^3.9.1",
-    "gulp-bump": "^2.5.0",
+    "gulp-bump": "^3.0.0",
     "gulp-cache": "^1.0.0",
     "gulp-changed": "^3",
     "gulp-checktextdomain": "^2",

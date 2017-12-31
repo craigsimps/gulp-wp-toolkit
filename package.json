@@ -29,7 +29,7 @@
     "gulp-hologram": "^1.2.0",
     "gulp-imagemin": "^4.0.0",
     "gulp-jsonlint": "^1.1.2",
-    "gulp-jsvalidate": "^3.0.0",
+    "gulp-jsvalidate": "^4.0.0",
     "gulp-notify": "^3.0.0",
     "gulp-phpcs": "^2",
     "gulp-phpmd-plugin": "^1.1.4",

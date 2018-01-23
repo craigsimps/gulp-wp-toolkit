@@ -54,7 +54,7 @@
     "postcss-banner": "3.0.0",
     "postcss-pxtorem": "^4.0.0",
     "stylelint-config-wordpress": "^12",
-    "yargs": "^10.0.3"
+    "yargs": "^11.0.0"
   },
   "devDependencies": {
     "eslint": "^4.5.0",

@@ -21,7 +21,8 @@ module.exports = {
         phpcs: 'phpcs.xml',
         phpmd: 'phpmd.xml',
         eslint: '.eslintrc',
-        stylelint: '.stylelintrc'
+        stylelint: '.stylelintrc',
+        csscomb: '.csscomb.json',
     },
     bump: {
       files: [
@@ -49,6 +50,7 @@ module.exports = {
                 src: 'develop/scss/style.scss',
                 dest: './',
                 outputStyle: 'compressed',
+                sourceMap: true,
             }
         }
     },

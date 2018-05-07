@@ -16,7 +16,10 @@ const gulp = require('gulp'),
   notify = require('gulp-notify'),
   map = require('lodash.map'),
   rename = require('gulp-rename'),
-  fs = require('fs');
+  fs = require('fs'),
+  csscomb = require('gulp-csscomb'),
+  gulpif = require('gulp-if'),
+  path = require('path');
 
 module.exports = function() {
 
@@ -100,6 +103,17 @@ module.exports = function() {
 
   };
 
+  const getCombFile = function() {
+    let themeLintFile = config.lintfiles.csscomb;
+    let lintFile = path.join(__dirname, '../../lintfiles/', '.csscomb.json');
+
+    if (fs.existsSync(themeLintFile)) {
+      lintFile = themeLintFile;
+    }
+
+    return lintFile;
+  };
+
   return map(config.css.scss, function(outputConfig, outputFilename) {
 
     if (!fs.existsSync(outputConfig.src)) {
@@ -107,17 +121,26 @@ module.exports = function() {
         ' was not found.');
     }
 
+    let isExpanded = function() {
+      return 'expanded' === outputConfig.outputStyle;
+    };
+
+    let createSourceMap = function() {
+      return true === outputConfig.sourceMap;
+    };
+
     return gulp.src(outputConfig.src)
       .pipe(bulksass())
       .pipe(plumber())
       .pipe(rename(outputFilename + '.css'))
-      .pipe(sourcemap.init())
+      .pipe(gulpif(createSourceMap, sourcemap.init()))
       .pipe(sass.sync({
         outputStyle: outputConfig.outputStyle,
         includePaths: [].concat(normalize),
       }))
       .pipe(postcss(getPostProcessors(outputConfig, outputFilename)))
-      .pipe(sourcemap.write('./'))
+      .pipe(gulpif(isExpanded, csscomb(getCombFile())))
+      .pipe(gulpif(createSourceMap, sourcemap.write('./')))
       .pipe(gulp.dest(outputConfig.dest))
       .pipe(notify({message: config.messages.css}));
   });

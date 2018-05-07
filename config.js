@@ -50,6 +50,7 @@ module.exports = {
                 src: 'develop/scss/style.scss',
                 dest: './',
                 outputStyle: 'compressed',
+                sourceMap: true,
             }
         }
     },

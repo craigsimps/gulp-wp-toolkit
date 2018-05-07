@@ -125,18 +125,22 @@ module.exports = function() {
       return 'expanded' === outputConfig.outputStyle;
     };
 
+    let createSourceMap = function() {
+      return true === outputConfig.sourceMap;
+    };
+
     return gulp.src(outputConfig.src)
       .pipe(bulksass())
       .pipe(plumber())
       .pipe(rename(outputFilename + '.css'))
-      .pipe(sourcemap.init())
+      .pipe(gulpif(createSourceMap, sourcemap.init()))
       .pipe(sass.sync({
         outputStyle: outputConfig.outputStyle,
         includePaths: [].concat(normalize),
       }))
       .pipe(postcss(getPostProcessors(outputConfig, outputFilename)))
       .pipe(gulpif(isExpanded, csscomb(getCombFile())))
-      .pipe(sourcemap.write('./'))
+      .pipe(gulpif(createSourceMap, sourcemap.write('./')))
       .pipe(gulp.dest(outputConfig.dest))
       .pipe(notify({message: config.messages.css}));
   });

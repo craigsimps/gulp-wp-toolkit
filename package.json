@@ -55,6 +55,7 @@
     "node-normalize-scss": "^8.0.0",
     "postcss-banner": "3.0.0",
     "postcss-pxtorem": "^4.0.0",
+    "stylelint": "^9.2.0",
     "stylelint-config-wordpress": "^13.0.0",
     "yargs": "^11.0.0"
   },

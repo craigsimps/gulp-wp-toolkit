@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.2.1] - 2018-05-07
+### Removed
+* `yarn.lock` file.
+
 ## [2.2.0] - 2018-05-07
 ### Added
 * Support for CSSComb on stylesheets with expanded output style.

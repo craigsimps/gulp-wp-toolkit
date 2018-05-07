@@ -50,7 +50,7 @@
     "gulp-wp-pot": "^2.0.3",
     "lodash.map": "^4.6.0",
     "lodash.merge": "^4.6.0",
-    "node-normalize-scss": "^3",
+    "node-normalize-scss": "^8.0.0",
     "postcss-banner": "3.0.0",
     "postcss-pxtorem": "^4.0.0",
     "stylelint-config-wordpress": "^13.0.0",

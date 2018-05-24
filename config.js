@@ -55,5 +55,6 @@ module.exports = {
         }
     },
     js: {},
-    theme: {}
+    theme: {},
+    server: {},
 };

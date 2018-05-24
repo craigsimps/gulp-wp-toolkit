@@ -5,9 +5,6 @@ const bs = require('browser-sync').create('SIM01'),
 
 module.exports = function() {
   if (config.server.url) {
-    bs.init({
-      proxy: config.server.url,
-      online: true,
-    });
+    bs.init( config.server );
   }
 };

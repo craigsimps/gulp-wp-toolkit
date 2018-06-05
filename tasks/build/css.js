@@ -84,7 +84,7 @@ module.exports = function() {
 
     // Add CSS Nano to further compress our output..
     if ('compressed' === outputConfig.outputStyle) {
-      postProcessors.push(cssnano());
+      postProcessors.push(cssnano(config.css.cssnano));
     }
 
     // If we're working on the main style.css, output the theme header.

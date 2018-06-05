@@ -36,7 +36,8 @@ toolkit.extendConfig({
 		],
 	},
 	server: {
-		url: 'example.dev',
+		proxy: 'example.dev',
+        online: true,
 	},
 	src: {
 		zipuser: [

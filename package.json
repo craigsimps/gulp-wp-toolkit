@@ -2,7 +2,7 @@
   "name": "gulp-wp-toolkit",
   "homepage": "https://github.com/craigsimps/gulp-wp-toolkit",
   "author": "Craig Simpson <craig@craigsimpson.scot>",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Set of configurable Gulp tasks for use in my WordPress themes.",
   "repository": "https://github.com/craigsimps/gulp-wp-toolkit.git",
   "license": "MIT",

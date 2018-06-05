@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.3.2] -2018-06-05
+### Changed
+
+* Updated changelog.
+
+## [2.3.1] -2018-06-05
+### Changed
+
+* Pass config object directly to BrowserSync task. See #102
+* Pass config object to CSSNano in CSS build task. See #104
+* Update bundled CSSComb file.
+
+### Fixed
+
+* `gulp bump` now respects arguments passed. See #87
+
+### Removed
+
+* Hologram style guide task.
+
 ## [2.2.1] - 2018-05-07
 ### Removed
 * `yarn.lock` file.
@@ -159,6 +179,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial release.
 
+[2.3.2]: https://github.com/craigsimps/gulp-wp-toolkit/compare/2.3.1...2.3.2
+[2.3.1]: https://github.com/craigsimps/gulp-wp-toolkit/compare/2.2.1...2.3.1
+[2.2.1]: https://github.com/craigsimps/gulp-wp-toolkit/compare/2.2.0...2.2.1
 [2.2.0]: https://github.com/craigsimps/gulp-wp-toolkit/compare/2.1.0...2.2.0
 [2.1.0]: https://github.com/craigsimps/gulp-wp-toolkit/compare/2.0.0...2.1.0
 [2.0.0]: https://github.com/craigsimps/gulp-wp-toolkit/compare/1.2.2...2.0.0

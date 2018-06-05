@@ -43,6 +43,7 @@ module.exports = {
     },
     css: {
         basefontsize: 16,
+        cssnano: {},
         remreplace: false,
         remmediaquery: true,
         scss: {

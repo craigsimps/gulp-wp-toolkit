@@ -7,15 +7,14 @@ const gulp = require('gulp'),
 
 module.exports = function() {
 
-  const type = args.type,
-    version = args.version;
+  let options = {
+    type: 'patch'
+  };
 
-  let options = {};
-
-  if (version) {
-    options.version = version;
-  } else {
-    options.type = type;
+  if ( args.hasOwnProperty('ma') ) {
+    options.type = 'major';
+  } else if ( args.hasOwnProperty('mi') ) {
+    options.type = 'minor';
   }
 
   return gulp.src(config.bump.files)

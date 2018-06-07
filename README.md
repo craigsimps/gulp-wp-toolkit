@@ -68,6 +68,14 @@ Once your `Gulpfile.js` is in place, install all the dependencies using `yarn in
 
 See the files in the example directory for more advanced configuration.
 
+There are also a number of posts on my blog relating to setting up Gulp WP Toolkit, including:
+
+* [Adding Gulp WP Toolkit to an existing Genesis theme.](https://craigsimpson.scot/adding-gulp-wp-toolkit-to-an-existing-genesis-theme)
+* [Gulp WP Toolkit SCSS Configuration and Options](https://craigsimpson.scot/gulp-wp-toolkit-scss-configuration-and-options)
+* [Gulp WP Toolkit JavaScript Configuration](https://craigsimpson.scot/gulp-wp-toolkit-javascript-configuration)
+* [Bulk Import Your SCSS Partials using Gulp WP Toolkit](https://craigsimpson.scot/bulk-import-your-scss-partials-using-gulp-wp-toolkit)
+* [An Overview of the Gulp WP Toolkit Build Tasks](https://craigsimpson.scot/bulk-import-your-scss-partials-using-gulp-wp-toolkit)
+
 ## Tasks
 
 Once installed, the following tasks will be available to run via `gulp <taskname>`.

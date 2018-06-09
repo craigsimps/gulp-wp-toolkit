@@ -74,7 +74,7 @@ There are also a number of posts on my blog relating to setting up Gulp WP Toolk
 * [Gulp WP Toolkit SCSS Configuration and Options](https://craigsimpson.scot/gulp-wp-toolkit-scss-configuration-and-options)
 * [Gulp WP Toolkit JavaScript Configuration](https://craigsimpson.scot/gulp-wp-toolkit-javascript-configuration)
 * [Bulk Import Your SCSS Partials using Gulp WP Toolkit](https://craigsimpson.scot/bulk-import-your-scss-partials-using-gulp-wp-toolkit)
-* [An Overview of the Gulp WP Toolkit Build Tasks](https://craigsimpson.scot/bulk-import-your-scss-partials-using-gulp-wp-toolkit)
+* [An Overview of the Gulp WP Toolkit Build Tasks](https://craigsimpson.scot/an-overview-of-the-gulp-wp-toolkit-build-tasks)
 
 ## Tasks
 

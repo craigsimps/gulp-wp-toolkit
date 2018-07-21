@@ -36,7 +36,8 @@ toolkit.extendConfig({
 		],
 	},
 	server: {
-		url: 'example.dev',
+		proxy: 'example.dev',
+        online: true,
 	},
 	src: {
 		zipuser: [
@@ -80,6 +81,12 @@ toolkit.extendConfig({
 	},
 	css: {
 		basefontsize: 16, // Used by postcss-pxtorem.
+		cssnano: {
+			discardComments: {
+				removeAll: true
+			},
+			zindex: false,
+		},
         remreplace: false, // Used by postcss-pxtorem.
         remmediaquery: true, // Used by postcss-pxtorem.
 		scss: {

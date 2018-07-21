@@ -1,19 +1,19 @@
 'use strict';
 
-const gulp = require('gulp'),
-  config = require('../config'),
-  bump = require('gulp-bump'),
-  args = require('yargs').argv;
+const gulp = require('gulp');
+const config = require('../config');
+const bump = require('gulp-bump');
+const args = require('yargs').argv;
 
 module.exports = function() {
 
   let options = {
-    type: 'patch'
+    type: 'patch',
   };
 
-  if ( args.hasOwnProperty('ma') ) {
+  if (args.hasOwnProperty('ma')) {
     options.type = 'major';
-  } else if ( args.hasOwnProperty('mi') ) {
+  } else if (args.hasOwnProperty('mi')) {
     options.type = 'minor';
   }
 

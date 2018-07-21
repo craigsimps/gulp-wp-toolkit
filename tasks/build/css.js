@@ -1,25 +1,26 @@
 'use strict';
 
-const gulp = require('gulp'),
-  config = require('../../config'),
-  plumber = require('gulp-plumber'),
-  sourcemap = require('gulp-sourcemaps'),
-  sass = require('gulp-sass'),
-  normalize = require('node-normalize-scss').includePaths,
-  postcss = require('gulp-postcss'),
-  bulksass = require('gulp-sass-bulk-import'),
-  mqpacker = require('css-mqpacker'),
-  autoprefix = require('autoprefixer'),
-  pxtorem = require('postcss-pxtorem'),
-  cssnano = require('cssnano'),
-  banner = require('postcss-banner'),
-  notify = require('gulp-notify'),
-  map = require('lodash.map'),
-  rename = require('gulp-rename'),
-  fs = require('fs'),
-  csscomb = require('gulp-csscomb'),
-  gulpif = require('gulp-if'),
-  path = require('path');
+const gulp = require('gulp');
+const config = require('../../config');
+const plumber = require('gulp-plumber');
+const sourcemap = require('gulp-sourcemaps');
+const sass = require('gulp-sass');
+const normalize = require('node-normalize-scss').includePaths;
+const postcss = require('gulp-postcss');
+const bulksass = require('gulp-sass-bulk-import');
+const mqpacker = require('css-mqpacker');
+const autoprefix = require('autoprefixer');
+const pxtorem = require('postcss-pxtorem');
+const cssnano = require('cssnano');
+const banner = require('postcss-banner');
+const notify = require('gulp-notify');
+const map = require('lodash.map');
+const rename = require('gulp-rename');
+const fs = require('fs');
+const csscomb = require('gulp-csscomb');
+const gulpif = require('gulp-if');
+const path = require('path');
+const log = require('fancy-log');
 
 module.exports = function() {
 
@@ -117,8 +118,7 @@ module.exports = function() {
   return map(config.css.scss, function(outputConfig, outputFilename) {
 
     if (!fs.existsSync(outputConfig.src)) {
-      return console.log('ERROR >> Source file ' + outputConfig.src +
-        ' was not found.');
+      return log('ERROR >> Source file ' + outputConfig.src + ' was not found.');
     }
 
     let isExpanded = function() {
@@ -142,6 +142,6 @@ module.exports = function() {
       .pipe(gulpif(isExpanded, csscomb(getCombFile())))
       .pipe(gulpif(createSourceMap, sourcemap.write('./')))
       .pipe(gulp.dest(outputConfig.dest))
-      .pipe(notify({message: config.messages.css}));
+      .pipe(notify({ message: config.messages.css }));
   });
 };

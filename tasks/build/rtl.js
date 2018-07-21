@@ -1,10 +1,10 @@
 'use strict';
 
-const gulp = require('gulp'),
-  config = require('../../config'),
-  rtlcss = require('gulp-rtlcss'),
-  rename = require('gulp-rename'),
-  replace = require('gulp-replace');
+const gulp = require('gulp');
+const config = require('../../config');
+const rtlcss = require('gulp-rtlcss');
+const rename = require('gulp-rename');
+const replace = require('gulp-replace');
 
 module.exports = function() {
   return gulp.src('style.css')

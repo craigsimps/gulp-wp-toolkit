@@ -1,10 +1,10 @@
 'use strict';
 
-const gulp = require('gulp'),
-  config = require('../../config'),
-  fs = require('fs'),
-  path = require('path'),
-  eslint = require('gulp-eslint');
+const gulp = require('gulp');
+const config = require('../../config');
+const fs = require('fs');
+const path = require('path');
+const eslint = require('gulp-eslint');
 
 module.exports = function() {
 

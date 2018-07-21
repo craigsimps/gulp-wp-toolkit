@@ -1,10 +1,10 @@
 'use strict';
 
-const gulp = require('gulp'),
-  config = require('../../config'),
-  fs = require('fs'),
-  path = require('path'),
-  stylelint = require('gulp-stylelint');
+const gulp = require('gulp');
+const config = require('../../config');
+const fs = require('fs');
+const path = require('path');
+const stylelint = require('gulp-stylelint');
 
 module.exports = function() {
 
@@ -20,7 +20,7 @@ module.exports = function() {
     .pipe(stylelint({
       configFile: lintFile,
       reporters: [
-        {formatter: 'string', console: true},
+        { formatter: 'string', console: true },
       ],
     }));
 };

@@ -1,11 +1,11 @@
 'use strict';
 
-const gulp = require('gulp'),
-  config = require('../../config'),
-  sort = require('gulp-sort'),
-  plumber = require('gulp-plumber'),
-  potgen = require('gulp-wp-pot'),
-  notify = require('gulp-notify');
+const gulp = require('gulp');
+const config = require('../../config');
+const sort = require('gulp-sort');
+const plumber = require('gulp-plumber');
+const potgen = require('gulp-wp-pot');
+const notify = require('gulp-notify');
 
 module.exports = function() {
   return gulp.src(config.src.php)
@@ -16,5 +16,5 @@ module.exports = function() {
       package: config.theme.name + ' ' + config.theme.version,
     }))
     .pipe(gulp.dest(config.dest.i18npo + config.theme.textdomain + '.pot'))
-    .pipe(notify({message: config.messages.i18n}));
+    .pipe(notify({ message: config.messages.i18n }));
 };

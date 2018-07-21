@@ -1,10 +1,10 @@
 'use strict';
 
-const gulp = require('gulp'),
-  config = require('../../config'),
-  fs = require('fs'),
-  path = require('path'),
-  phpcs = require('gulp-phpcs');
+const gulp = require('gulp');
+const config = require('../../config');
+const fs = require('fs');
+const path = require('path');
+const phpcs = require('gulp-phpcs');
 
 module.exports = function() {
 

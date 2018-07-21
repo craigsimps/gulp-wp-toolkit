@@ -28,7 +28,7 @@ module.exports = {
     files: [
       './package.json',
       './composer.json',
-    ]
+    ],
   },
   messages: {
     css: 'Stylesheet compiled and saved: <%= file.relative %>',
@@ -52,9 +52,9 @@ module.exports = {
         dest: './',
         outputStyle: 'compressed',
         sourceMap: true,
-      }
-    }
+      },
+    },
   },
   js: {},
-  theme: {}
+  theme: {},
 };

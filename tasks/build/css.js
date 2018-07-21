@@ -118,7 +118,8 @@ module.exports = function() {
   return map(config.css.scss, function(outputConfig, outputFilename) {
 
     if (!fs.existsSync(outputConfig.src)) {
-      return log('ERROR >> Source file ' + outputConfig.src + ' was not found.');
+      return log('ERROR >> Source file ' + outputConfig.src
+        + ' was not found.');
     }
 
     let isExpanded = function() {

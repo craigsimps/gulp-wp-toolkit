@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.3.3] -2018-07-21
+### Changed
+
+* Updated dependencies to latest versions.
+* Fixed JS code standards issues highlighted by ESLint.
+
 ## [2.3.2] -2018-06-05
 ### Changed
 
@@ -179,6 +185,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Initial release.
 
+[2.3.3]: https://github.com/craigsimps/gulp-wp-toolkit/compare/2.3.2...2.3.3
 [2.3.2]: https://github.com/craigsimps/gulp-wp-toolkit/compare/2.3.1...2.3.2
 [2.3.1]: https://github.com/craigsimps/gulp-wp-toolkit/compare/2.2.1...2.3.1
 [2.2.1]: https://github.com/craigsimps/gulp-wp-toolkit/compare/2.2.0...2.2.1

@@ -37,7 +37,7 @@
     "gulp-phpmd-plugin": "^1.1.4",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.1",
-    "gulp-potomo": "^1.0.3",
+    "gulp-potomo": "^1.1.0",
     "gulp-rename": "^1.3.0",
     "gulp-replace": "^1.0.0",
     "gulp-rtlcss": "^1.2.0",

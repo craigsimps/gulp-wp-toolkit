@@ -47,7 +47,7 @@
     "gulp-sort": "^2.0.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-stylelint": "^7.0.0",
-    "gulp-uglify": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
     "gulp-uglifycss": "^1.1.0",
     "gulp-wp-pot": "^2.3.2",
     "lodash.map": "^4.6.0",

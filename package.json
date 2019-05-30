@@ -29,7 +29,7 @@
     "gulp-eslint": "^5.0.0",
     "gulp-filter": "^5.1.0",
     "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^4.1.0",
+    "gulp-imagemin": "^6.0.0",
     "gulp-jsonlint": "^1.2.1",
     "gulp-jsvalidate": "^4.0.0",
     "gulp-notify": "^3.2.0",

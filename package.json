@@ -28,7 +28,7 @@
     "gulp-csscomb": "^3.0.8",
     "gulp-eslint": "^5.0.0",
     "gulp-filter": "^5.1.0",
-    "gulp-if": "^2.0.2",
+    "gulp-if": "^3.0.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-jsonlint": "^1.2.1",
     "gulp-jsvalidate": "^4.0.0",

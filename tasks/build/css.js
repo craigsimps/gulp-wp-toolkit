@@ -40,6 +40,7 @@ module.exports = function() {
       'Text Domain': 'textdomain',
       'Domain Path': 'domainpath',
       Template: 'template',
+      'Template Version': 'templateversion',
     };
 
     let key;

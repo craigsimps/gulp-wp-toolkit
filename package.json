@@ -33,7 +33,7 @@
     "gulp-jsonlint": "^1.2.1",
     "gulp-jsvalidate": "^4.0.0",
     "gulp-notify": "^3.2.0",
-    "gulp-phpcs": "^2.2.0",
+    "gulp-phpcs": "^3.1.0",
     "gulp-phpmd-plugin": "^1.1.4",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.1",

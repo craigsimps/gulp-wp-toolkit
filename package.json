@@ -11,7 +11,7 @@
     "node": ">=6"
   },
   "dependencies": {
-    "autoprefixer": "^9.0.1",
+    "autoprefixer": "^9.6.4",
     "browser-sync": "^2.24.6",
     "colorguard": "^1.2.1",
     "css-mqpacker": "^7.0.0",

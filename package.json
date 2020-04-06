@@ -49,7 +49,7 @@
     "gulp-stylelint": "^7.0.0",
     "gulp-uglify": "^3.0.0",
     "gulp-uglifycss": "^1.1.0",
-    "gulp-wp-pot": "^2.3.2",
+    "gulp-wp-pot": "^2.4.1",
     "lodash.map": "^4.6.0",
     "lodash.merge": "^4.6.1",
     "node-normalize-scss": "^8.0.0",

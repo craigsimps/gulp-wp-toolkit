@@ -53,7 +53,7 @@
     "lodash.map": "^4.6.0",
     "lodash.merge": "^4.6.1",
     "node-normalize-scss": "^8.0.0",
-    "postcss-banner": "^3.0.0",
+    "postcss-banner": "^3.0.2",
     "postcss-pxtorem": "^4.0.1",
     "stylelint": "^9.3.0",
     "stylelint-config-wordpress": "^13.0.0",
